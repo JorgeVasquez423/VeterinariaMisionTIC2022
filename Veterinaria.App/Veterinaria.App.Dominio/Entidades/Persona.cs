@@ -1,0 +1,17 @@
+using System;
+
+namespace Veterinaria.App.Dominio
+{
+    public class Persona
+    {
+        public int Id {get;set;}
+        public String Nombre {get;set;}
+        //public string sexo {get;set;}
+        public String Telefono {get;set;}
+        public int Edad {get;set;}
+        public String Direccion {get;set;}
+        public String Correo {get;set;}
+        public String Contraseña {get;set;}
+        public DateTime FechaRegistro {get;set;}
+    }
+}

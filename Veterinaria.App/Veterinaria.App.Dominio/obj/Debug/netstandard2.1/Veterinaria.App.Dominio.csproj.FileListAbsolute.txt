@@ -1,0 +1,9 @@
+D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Dominio\bin\Debug\netstandard2.1\Veterinaria.App.Dominio.deps.json
+D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Dominio\bin\Debug\netstandard2.1\Veterinaria.App.Dominio.dll
+D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Dominio\bin\Debug\netstandard2.1\Veterinaria.App.Dominio.pdb
+D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.csprojAssemblyReference.cache
+D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.AssemblyInfoInputs.cache
+D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.AssemblyInfo.cs
+D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.csproj.CoreCompileInputs.cache
+D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.dll
+D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.pdb
