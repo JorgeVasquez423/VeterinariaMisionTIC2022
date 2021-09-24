@@ -13,11 +13,22 @@ namespace Veterinaria.App.Consola
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            /* veterinario*/
             //addVeterinario();
-            //addAdmin();
             //BuscarVeterinario(7);
-            EditVeterinario(2);
+            //EditVeterinario(2);
             //eliminarVeterinario(4);
+
+
+
+
+            /*admin*/
+            //addAdmin();
+            //eliminarAdministrador(5);
+            //BuscarAdministrador(3);
+            //EditAdministrador(3);
+
         }
 
         /*--------------------------------*/
@@ -95,13 +106,51 @@ namespace Veterinaria.App.Consola
                 Edad = 22,
                 Direccion = "cra 26 # 12-65",
                 Correo = "123@veterinario.com",
-                Contraseña = " 123",
+                Contraseña = " 123#$%",
                 FechaRegistro = new DateTime(2021,09,21),
                 Cargo = "Administrador",
                     
             };
                
             repositorioAdmin.addAdministrador(admin);
+        }
+
+        /*--------------------------------*/
+
+        private static void eliminarAdministrador(int idadmin){
+            repositorioAdmin.eliminarAdministrador(idadmin);
+
+        }
+        /*--------------------------------*/
+
+        private static void BuscarAdministrador(int idadmin){
+            var adminEncontrado = repositorioAdmin.GetAdministrador(idadmin);
+            Console.WriteLine("Administrador --> nombre: " + adminEncontrado.Nombre);
+
+        }
+
+        /*--------------------------------*/
+
+
+        private static void EditAdministrador(int idadmin){
+
+            Administrador admin = new Administrador {
+
+                Id = idadmin,
+                Nombre ="Miguel Pasaje",
+                Telefono = "12345655",
+                Edad = 22,
+                Direccion = "cra 26 # 12-65",
+                Correo = "MP@admin.com",
+                Contraseña = " 123#$%123",
+                FechaRegistro = new DateTime(2021,09,21),
+                Cargo = "Administrador Jefe",
+                    
+            };
+               
+            repositorioAdmin.editAdministrador(admin);
+
+        
         }
 
 

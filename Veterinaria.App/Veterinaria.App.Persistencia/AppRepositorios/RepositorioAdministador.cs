@@ -24,22 +24,35 @@ namespace Veterinaria.App.Persistencia{
 
         }
 
-        public Administrador editAdministrador(Administrador administrador){
-            return null;
+        public Administrador editAdministrador(Administrador administradorNuevo){
+            var adminEncontrado = this.appContext.Administradores.FirstOrDefault(a => a.Id == administradorNuevo.Id);
+            if (adminEncontrado != null){
 
+                adminEncontrado.Nombre  = administradorNuevo.Nombre;
+                adminEncontrado.Telefono  = administradorNuevo.Telefono;
+                adminEncontrado.Edad  = administradorNuevo.Edad;
+                adminEncontrado.Correo  = administradorNuevo.Correo;
+                adminEncontrado.Contraseña  = administradorNuevo.Contraseña;
+                adminEncontrado.FechaRegistro  = administradorNuevo.FechaRegistro;
+                adminEncontrado.Cargo  = administradorNuevo.Cargo;
+                this.appContext.SaveChanges();
+
+            }
+            
+            return null;
         }
         public void eliminarAdministrador(int idAdmin){
 
             var adminEncontrado = this.appContext.Administradores.FirstOrDefault(a => a.Id == idAdmin);
 
             if(adminEncontrado == null){
-                //return null;
-                //var x=5;
+                Console.WriteLine("no existe el id del administrador que desea eliminar");
                 return ;
             }else
             {
                 this.appContext.Administradores.Remove(adminEncontrado);
                 this.appContext.SaveChanges();
+                Console.WriteLine("administrador Eliminado");
             }
 
         }
