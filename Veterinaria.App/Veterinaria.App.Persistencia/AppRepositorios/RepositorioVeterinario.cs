@@ -12,7 +12,6 @@ namespace Veterinaria.App.Persistencia{
         private readonly AppContext appContext;
 
         //constructor
-
         public RepositorioVeterinario(AppContext appContextParam){
             this.appContext = appContextParam;
         }
