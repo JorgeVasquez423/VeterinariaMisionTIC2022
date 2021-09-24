@@ -20,11 +20,28 @@ namespace Veterinaria.App.Persistencia{
 
             var veterinarioAdicionado = this.appContext.Veterinarios.Add(veterinario);
             this.appContext.SaveChanges();
+            Console.WriteLine("veterinario agregado");
 
             return veterinarioAdicionado.Entity;
         }
 
-        public Veterinario editVeterinario(Veterinario veterinario){
+        public Veterinario editVeterinario(Veterinario veterinarioNuevo){
+            var veterinarioEncontrado = this.appContext.Veterinarios.FirstOrDefault(v => v.Id == veterinarioNuevo.Id);
+
+            if (veterinarioEncontrado != null){
+
+                veterinarioEncontrado.Nombre  = veterinarioNuevo.Nombre;
+                veterinarioEncontrado.Telefono  = veterinarioNuevo.Telefono;
+                veterinarioEncontrado.Edad  = veterinarioNuevo.Edad;
+                veterinarioEncontrado.Correo  = veterinarioNuevo.Correo;
+                veterinarioEncontrado.Contraseña  = veterinarioNuevo.Contraseña;
+                veterinarioEncontrado.FechaRegistro  = veterinarioNuevo.FechaRegistro;
+                veterinarioEncontrado.Especializacion  = veterinarioNuevo.Especializacion;
+                veterinarioEncontrado.TarjetaProfecional  = veterinarioNuevo.TarjetaProfecional;
+                this.appContext.SaveChanges();
+
+            }
+            
             return null;
 
         }
@@ -35,12 +52,14 @@ namespace Veterinaria.App.Persistencia{
             if(veterinarioEncontrado == null){
                 //return null;
                 //var x=5;
+                Console.WriteLine("no existe el id del veterinario que desea eliminar");
                 return ;
             }
             else
             {
                 this.appContext.Veterinarios.Remove(veterinarioEncontrado);
                 this.appContext.SaveChanges();
+                Console.WriteLine("Veterinario Eliminado");
             }
 
         }
@@ -49,8 +68,11 @@ namespace Veterinaria.App.Persistencia{
 
             if(veterinarioEncontrado != null){
                 return veterinarioEncontrado;
+            }else
+            {
+                Console.WriteLine("veterinario no encontrado");
+                return null;                
             }
-            return null;
 
         }
         public IEnumerable<Veterinario> GetVeterinario(){

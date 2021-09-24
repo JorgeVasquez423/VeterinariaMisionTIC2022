@@ -13,9 +13,16 @@ namespace Veterinaria.App.Consola
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            addVeterinario();
-            addAdmin();
+            //addVeterinario();
+            //addAdmin();
+            //BuscarVeterinario(7);
+            EditVeterinario(2);
+            //eliminarVeterinario(4);
         }
+
+        /*--------------------------------*/
+        /* crud Veterinario*/
+        /*--------------------------------*/
 
         private static void addVeterinario(){
 
@@ -34,8 +41,51 @@ namespace Veterinaria.App.Consola
 
             repositorioVeterinario.addVeterinario(veterinario);
 
+        
+        }
+
+        /*--------------------------------*/
+
+        private static void eliminarVeterinario(int idVeterinario){
+            repositorioVeterinario.eliminarVeterinario(idVeterinario);
 
         }
+        /*--------------------------------*/
+
+        private static void BuscarVeterinario(int idVeterinario){
+            var veterinarioEncontrado = repositorioVeterinario.GetVeterinario(idVeterinario);
+            Console.WriteLine("veterinario --> nombre: " + veterinarioEncontrado.Nombre);
+
+        }
+
+        /*--------------------------------*/
+
+
+        private static void EditVeterinario(int idVeterinario){
+
+            Veterinario veterinario = new Veterinario {
+
+                Id = idVeterinario,
+                Nombre ="Miguel Pasaje",
+                Telefono = "12345655",
+                Edad = 22,
+                Direccion = "cra 26 # 12-65",
+                Correo = "123@veterinario.com",
+                Contraseña = " 123",
+                FechaRegistro = new DateTime(2021,09,21),
+                Especializacion = "anestesiologo",
+                TarjetaProfecional = "123486",
+            };
+
+            repositorioVeterinario.editVeterinario(veterinario);
+
+        
+        }
+
+        /*--------------------------------*/
+        /* crud administrador*/
+        /*--------------------------------*/
+
         public static void addAdmin(){
 
             Administrador admin = new Administrador {
@@ -52,9 +102,9 @@ namespace Veterinaria.App.Consola
             };
                
             repositorioAdmin.addAdministrador(admin);
-
-
-
         }
+
+
+
     }
 }
