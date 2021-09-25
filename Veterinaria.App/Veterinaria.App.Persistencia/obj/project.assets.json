@@ -7263,19 +7263,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\GAMER\\.nuget\\packages\\": {}
+    "C:\\Users\\Jorge\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Persistencia\\Veterinaria.App.Persistencia.csproj",
+      "projectUniqueName": "G:\\My Drive\\MisionTIC 2022\\GIT\\VeterinariaMisionTIC2022\\VeterinariaMisionTIC2022\\Veterinaria.App\\Veterinaria.App.Persistencia\\Veterinaria.App.Persistencia.csproj",
       "projectName": "Veterinaria.App.Persistencia",
-      "projectPath": "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Persistencia\\Veterinaria.App.Persistencia.csproj",
-      "packagesPath": "C:\\Users\\GAMER\\.nuget\\packages\\",
-      "outputPath": "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Persistencia\\obj\\",
+      "projectPath": "G:\\My Drive\\MisionTIC 2022\\GIT\\VeterinariaMisionTIC2022\\VeterinariaMisionTIC2022\\Veterinaria.App\\Veterinaria.App.Persistencia\\Veterinaria.App.Persistencia.csproj",
+      "packagesPath": "C:\\Users\\Jorge\\.nuget\\packages\\",
+      "outputPath": "G:\\My Drive\\MisionTIC 2022\\GIT\\VeterinariaMisionTIC2022\\VeterinariaMisionTIC2022\\Veterinaria.App\\Veterinaria.App.Persistencia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\GAMER\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Jorge\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -7285,10 +7285,9 @@
       },
       "frameworks": {
         "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Dominio\\Veterinaria.App.Dominio.csproj": {
-              "projectPath": "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Dominio\\Veterinaria.App.Dominio.csproj"
+            "G:\\My Drive\\MisionTIC 2022\\GIT\\VeterinariaMisionTIC2022\\VeterinariaMisionTIC2022\\Veterinaria.App\\Veterinaria.App.Dominio\\Veterinaria.App.Dominio.csproj": {
+              "projectPath": "G:\\My Drive\\MisionTIC 2022\\GIT\\VeterinariaMisionTIC2022\\VeterinariaMisionTIC2022\\Veterinaria.App\\Veterinaria.App.Dominio\\Veterinaria.App.Dominio.csproj"
             }
           }
         }
@@ -7301,7 +7300,6 @@
     },
     "frameworks": {
       "netstandard2.1": {
-        "targetAlias": "netstandard2.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -7339,7 +7337,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.413\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -7,3 +7,12 @@ D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\
 D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.csproj.CoreCompileInputs.cache
 D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.dll
 D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.pdb
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Dominio\bin\Debug\netstandard2.1\Veterinaria.App.Dominio.deps.json
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Dominio\bin\Debug\netstandard2.1\Veterinaria.App.Dominio.dll
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Dominio\bin\Debug\netstandard2.1\Veterinaria.App.Dominio.pdb
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.csprojAssemblyReference.cache
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.AssemblyInfoInputs.cache
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.AssemblyInfo.cs
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.csproj.CoreCompileInputs.cache
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.dll
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Dominio\obj\Debug\netstandard2.1\Veterinaria.App.Dominio.pdb

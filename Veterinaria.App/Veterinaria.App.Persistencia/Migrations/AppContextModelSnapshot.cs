@@ -68,6 +68,16 @@ namespace Veterinaria.App.Persistencia.Migrations
                     b.HasDiscriminator().HasValue("Administrador");
                 });
 
+            modelBuilder.Entity("Veterinaria.App.Dominio.Cuidador", b =>
+                {
+                    b.HasBaseType("Veterinaria.App.Dominio.Persona");
+
+                    b.Property<string>("DireccionTrabajo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("Cuidador");
+                });
+
             modelBuilder.Entity("Veterinaria.App.Dominio.Veterinario", b =>
                 {
                     b.HasBaseType("Veterinaria.App.Dominio.Persona");

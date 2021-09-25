@@ -1,0 +1,14 @@
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\bin\Debug\netstandard2.1\Veterinaria.App.Consola.deps.json
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\bin\Debug\netstandard2.1\Veterinaria.App.Consola.dll
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\bin\Debug\netstandard2.1\Veterinaria.App.Consola.pdb
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\bin\Debug\netstandard2.1\Veterinaria.App.Dominio.dll
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\bin\Debug\netstandard2.1\Veterinaria.App.Persistencia.dll
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\bin\Debug\netstandard2.1\Veterinaria.App.Dominio.pdb
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\bin\Debug\netstandard2.1\Veterinaria.App.Persistencia.pdb
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\obj\Debug\netstandard2.1\Veterinaria.App.Consola.csprojAssemblyReference.cache
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\obj\Debug\netstandard2.1\Veterinaria.App.Consola.AssemblyInfoInputs.cache
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\obj\Debug\netstandard2.1\Veterinaria.App.Consola.AssemblyInfo.cs
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\obj\Debug\netstandard2.1\Veterinaria.App.Consola.csproj.CoreCompileInputs.cache
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\obj\Debug\netstandard2.1\Veterinaria.App.Consola.csproj.CopyComplete
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\obj\Debug\netstandard2.1\Veterinaria.App.Consola.dll
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\obj\Debug\netstandard2.1\Veterinaria.App.Consola.pdb

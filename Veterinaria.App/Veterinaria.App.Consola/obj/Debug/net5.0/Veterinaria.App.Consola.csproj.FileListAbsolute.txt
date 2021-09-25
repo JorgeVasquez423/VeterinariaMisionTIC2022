@@ -66,3 +66,4 @@ D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\
 D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Consola\obj\Debug\net5.0\Veterinaria.App.Consola.genruntimeconfig.cache
 D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Consola\bin\Debug\net5.0\Humanizer.dll
 D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Consola\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\My Drive\MisionTIC 2022\GIT\VeterinariaMisionTIC2022\VeterinariaMisionTIC2022\Veterinaria.App\Veterinaria.App.Consola\obj\Debug\net5.0\Veterinaria.App.Consola.pdb
