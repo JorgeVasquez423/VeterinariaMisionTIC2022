@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrudMascota</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="crudMascota.css">
+</head>
+
+<body>
+
+    <!--  -->
+    <div>
+        <nav>
+            <h1>
+                <a href="#">Veterinaria</a>
+            </h1>
+        </nav>
+    </div>
+    
+    <div class="container contenedor1">
+        <!-- btn agregar -->
+        <div class="btn-add_mascota">
+            <a href="" class="btn btn-primary">Nuevo</a>
+    
+        </div>
+    
+        <!-- buscar -->
+        <div class=" buscar_mascota ">
+            <input type="text" class="form-control" placeholder="Buscar">
+        </div>
+    </div>
+
+    <!-- tabla listar -->
+    <div class="container ">
+
+        <div class="table-responsive  ">
+            <table class="table table-striped ">
+                <caption>Lista de mascotas</caption>
+                <thead>
+                    <tr class="bg-dark" style=" color:white">
+                        <th scope="col">#</th>
+                        <th scope="col">nombre</th>
+                        <th scope="col">Especie Mascota</th>
+                        <th scope="col">Raza Mascota</th>
+                        <th scope="col">Edad Mascota</th>
+                        <th scope="col">Opciones </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+
+                        <td>
+                            <button class="btn btn-danger">                                
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                            <button class="btn btn-success">       
+                                <i class="far fa-eye"></i>                         
+                            </button>
+                            <button class="btn btn-warning">
+                                <i class="far fa-edit"></i>                                
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>@mdo</td>
+
+                        <td>
+                            <button class="btn btn-danger">                                
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                            <button class="btn btn-success">       
+                                <i class="far fa-eye"></i>                         
+                            </button>
+                            <button class="btn btn-warning">
+                                <i class="far fa-edit"></i>                                
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@mdo</td>
+
+                        <td>
+                            <button class="btn btn-danger">                                
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                            <button class="btn btn-success">       
+                                <i class="far fa-eye"></i>                         
+                            </button>
+                            <button class="btn btn-warning">
+                                <i class="far fa-edit"></i>                                
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+        <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/5f9c3bf3c5.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

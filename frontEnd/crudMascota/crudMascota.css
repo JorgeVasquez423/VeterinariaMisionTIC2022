@@ -1,0 +1,17 @@
+*{
+    margin: 1%;
+}
+
+.contenedor1{
+    display: flex;
+    justify-content:space-between;
+    
+}
+.btn-add_mascota{
+   float: left;
+   padding-left: 10px ;
+
+}
+.buscar_mascota{
+    float: right;
+}
