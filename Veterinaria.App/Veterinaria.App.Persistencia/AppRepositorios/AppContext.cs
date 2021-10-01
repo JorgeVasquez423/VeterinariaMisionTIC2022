@@ -14,6 +14,8 @@ namespace Veterinaria.App.Persistencia
 
         public DbSet<Cuidador> Cuidadores { get; set; }
 
+        public DbSet<Mascota> Mascotas { get; set;}
+
         protected override void OnConfiguring(
             DbContextOptionsBuilder optionsBuilder
         )

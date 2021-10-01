@@ -18,13 +18,17 @@ namespace Veterinaria.App.Consola
             repositorioCuidador =
                 new RepositorioCuidador(new Persistencia.AppContext());
 
+        private static IRepositorioMascota
+            repositorioMascota =
+                new RepositorioMascota(new Persistencia.AppContext());
+
         static void Main(string[] args)
         {
             Console.WriteLine("Ejecutado correctamente!");
 
             /* veterinario*/
             //addVeterinario();
-            BuscarVeterinario(2);
+            //BuscarVeterinario(2);
             //EditVeterinario(2);
             //eliminarVeterinario(4);
 
@@ -39,6 +43,12 @@ namespace Veterinaria.App.Consola
             //eliminarCuidador(6);
             //BuscarCuidador(3);
             //EditCuidador(8);
+
+            /*Mascota*/
+            //addMascota();
+            //eliminarMascota(1);
+            BuscarMascota(2);
+            //EditMascota(2);
         }
 
         /*--------------------------------*/
@@ -205,6 +215,55 @@ namespace Veterinaria.App.Consola
                 };
 
             repositorioCuidador.editCuidador(cuidador);
+        }
+
+        /*--------------------------------*/
+        /* CRUD Cuidador*/
+        /*--------------------------------*/
+
+        private static void addMascota()
+        {
+            Mascota mascota =
+                new Mascota {
+                    Nombre = "Mich",
+                    Especie = "Gato",
+                    Raza =  "Felino",
+                    Edad = 22,
+                    FechaRegistro = new DateTime(2021, 09, 21),
+                };
+
+            repositorioMascota.addMascota (mascota);
+        }
+
+         /*--------------------------------*/
+        private static void eliminarMascota(int idMascota)
+        {
+            repositorioMascota.eliminarMascota (idMascota);
+        }
+
+         /*--------------------------------*/
+        private static void BuscarMascota(int idMascota)
+        {
+            var MascotaEncontrado =
+                repositorioMascota.GetMascota(idMascota);
+            Console
+                .WriteLine("Mascota --> nombre: " +
+                MascotaEncontrado.Nombre);
+        }
+
+        private static void EditMascota(int idMascota)
+        {
+            Mascota mascota =
+                new Mascota {
+                    Id = idMascota,
+                    Nombre = "Michu",
+                    Especie = "Gato",
+                    Raza =  "Felino",
+                    Edad = 2,
+                    FechaRegistro = new DateTime(2021, 09, 23),
+                };
+
+            repositorioMascota.editMascota(mascota);
         }
     }
 }
