@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Gestión del Cuidador";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Gestión del Cuidador</h1>
+    <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p>
+</div>
+
+<form>
+  <div class="form-group">
+    <label for="id-nombre-cuidador">Nombre</label>
+    <input type="text" class="form-control" id="id-nombre-cuidador" aria-describedby="emailHelp" placeholder="Ingrese aquí su nombre completo">
+    <small id="id-nombre-cuidador-ayuda" class="form-text text-muted">Nombre y apellidos.</small>
+  </div>
+  <div class="form-group">
+    <label for="id-telefono-cuidador">Telefono</label>
+    <input type="tel" class="form-control" id="id-telefono-cuidador" aria-describedby="emailHelp" placeholder="Ingrese aquí su número de telefono">
+    <small id="id-telefono-cuidador-ayuda" class="form-text text-muted">Número de teléfono fijo o celular.</small>
+  </div>
+  <div class="form-group">
+    <label for="id-edad-cuidador">Edad</label>
+    <input type="number" class="form-control" id="id-edad-cuidador" aria-describedby="emailHelp" placeholder="Ingrese aquí su edad">
+    <small id="id-edad-cuidador-ayuda" class="form-text text-muted">Edad en años</small>
+  </div>
+  <div class="form-group">
+    <label for="id-direccion-cuidador">Dirección</label>
+    <input type="text" class="form-control" id="id-direccion-cuidador" aria-describedby="emailHelp" placeholder="Ingrese aquí la dirección de residencia">
+    <small id="id-direccion-cuidador-ayuda" class="form-text text-muted">Dirección completa</small>
+  </div>
+  <div class="form-group">
+    <label for="id-correo-cuidador">Correo electrónico</label>
+    <input type="email" class="form-control" id="id-correo-cuidador" aria-describedby="emailHelp" placeholder="Ingrese aquí su correo electrónico">
+    <small id="id-correo-cuidador-ayuda" class="form-text text-muted">Correo electrónico activo.</small>
+  </div>
+  <div class="form-group">
+    <label for="id-contrasena-cuidador">Contraseña</label>
+    <input type="password" class="form-control" id="id-contrasena-cuidador" placeholder="Contraseña">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck">
+    <label class="form-check-label" for="exampleCheck">Acepto la <a asp-area="" asp-page="/Privacy">Política de privacidad</a>.</p></label>  
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
