@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj": {}
+    "C:\\Users\\JGO\\Documents\\MISION TIC 2022\\DESARROLLO DE SOFTWARE CICLO 3\\PROYEC_VETERI_GIT\\GIT\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj": {}
   },
   "projects": {
-    "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj": {
+    "C:\\Users\\JGO\\Documents\\MISION TIC 2022\\DESARROLLO DE SOFTWARE CICLO 3\\PROYEC_VETERI_GIT\\GIT\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj",
+        "projectUniqueName": "C:\\Users\\JGO\\Documents\\MISION TIC 2022\\DESARROLLO DE SOFTWARE CICLO 3\\PROYEC_VETERI_GIT\\GIT\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj",
         "projectName": "Veterinaria.App.Presentacion",
-        "projectPath": "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj",
-        "packagesPath": "C:\\Users\\GAMER\\.nuget\\packages\\",
-        "outputPath": "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Presentacion\\obj\\",
+        "projectPath": "C:\\Users\\JGO\\Documents\\MISION TIC 2022\\DESARROLLO DE SOFTWARE CICLO 3\\PROYEC_VETERI_GIT\\GIT\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj",
+        "packagesPath": "C:\\Users\\JGO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JGO\\Documents\\MISION TIC 2022\\DESARROLLO DE SOFTWARE CICLO 3\\PROYEC_VETERI_GIT\\GIT\\Veterinaria.App\\Veterinaria.App.Presentacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\GAMER\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\JGO\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -24,7 +24,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -36,7 +35,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -47,12 +45,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.11, 3.1.11]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -61,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.411\\RuntimeIdentifierGraph.json"
         }
       }
     }
