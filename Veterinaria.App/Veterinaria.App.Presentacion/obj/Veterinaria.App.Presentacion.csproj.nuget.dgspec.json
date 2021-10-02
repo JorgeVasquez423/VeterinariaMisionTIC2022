@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Programacion Mision Tic_SAHO\\Ciclo_3\\Desarrollo se Software_SAHO\\Section Tree\\GIT\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj": {}
+    "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj": {}
   },
   "projects": {
-    "E:\\Programacion Mision Tic_SAHO\\Ciclo_3\\Desarrollo se Software_SAHO\\Section Tree\\GIT\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj": {
+    "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Programacion Mision Tic_SAHO\\Ciclo_3\\Desarrollo se Software_SAHO\\Section Tree\\GIT\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj",
+        "projectUniqueName": "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj",
         "projectName": "Veterinaria.App.Presentacion",
-        "projectPath": "E:\\Programacion Mision Tic_SAHO\\Ciclo_3\\Desarrollo se Software_SAHO\\Section Tree\\GIT\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj",
-        "packagesPath": "C:\\Users\\SanHOvi\\.nuget\\packages\\",
-        "outputPath": "E:\\Programacion Mision Tic_SAHO\\Ciclo_3\\Desarrollo se Software_SAHO\\Section Tree\\GIT\\Veterinaria.App\\Veterinaria.App.Presentacion\\obj\\",
+        "projectPath": "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj",
+        "packagesPath": "C:\\Users\\GAMER\\.nuget\\packages\\",
+        "outputPath": "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Presentacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SanHOvi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\GAMER\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -24,6 +24,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -35,6 +36,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -45,6 +47,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.11, 3.1.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -53,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.413\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
