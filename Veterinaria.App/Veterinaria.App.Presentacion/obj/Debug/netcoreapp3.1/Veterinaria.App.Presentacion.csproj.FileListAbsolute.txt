@@ -77,6 +77,50 @@ D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\
 D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.genruntimeconfig.cache
 D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.csproj.CopyComplete
 D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Login\Login.cshtml.g.cs
+<<<<<<< HEAD
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.exe
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.deps.json
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.runtimeconfig.json
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.runtimeconfig.dev.json
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.dll
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.pdb
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.Views.dll
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.Views.pdb
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.csprojAssemblyReference.cache
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.AssemblyInfoInputs.cache
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.AssemblyInfo.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.RazorAssemblyInfo.cache
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.RazorAssemblyInfo.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.TagHelpers.input.cache
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.TagHelpers.output.cache
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.RazorCoreGenerate.cache
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Administrador\Administrador.cshtml.g.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Cuidador\Cuidador.cshtml.g.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Login\Login.cshtml.g.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Mascota\Mascota.cshtml.g.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinario\Veterinario.cshtml.g.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.RazorTargetAssemblyInfo.cache
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.RazorTargetAssemblyInfo.cs
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.Views.pdb
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\staticwebassets\Veterinaria.App.Presentacion.StaticWebAssets.Manifest.cache
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\staticwebassets\Veterinaria.App.Presentacion.StaticWebAssets.xml
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.dll
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.pdb
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.genruntimeconfig.cache
+C:\Users\JGO\Documents\MISION TIC 2022\DESARROLLO DE SOFTWARE CICLO 3\PROYEC_VETERI_GIT\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.csproj.CopyComplete
+=======
 E:\Programacion Mision Tic_SAHO\Ciclo_3\Desarrollo se Software_SAHO\Section Tree\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\Programacion Mision Tic_SAHO\Ciclo_3\Desarrollo se Software_SAHO\Section Tree\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\appsettings.json
 E:\Programacion Mision Tic_SAHO\Ciclo_3\Desarrollo se Software_SAHO\Section Tree\GIT\Veterinaria.App\Veterinaria.App.Presentacion\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -119,3 +163,4 @@ E:\Programacion Mision Tic_SAHO\Ciclo_3\Desarrollo se Software_SAHO\Section Tree
 E:\Programacion Mision Tic_SAHO\Ciclo_3\Desarrollo se Software_SAHO\Section Tree\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.pdb
 E:\Programacion Mision Tic_SAHO\Ciclo_3\Desarrollo se Software_SAHO\Section Tree\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.genruntimeconfig.cache
 E:\Programacion Mision Tic_SAHO\Ciclo_3\Desarrollo se Software_SAHO\Section Tree\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.csproj.CopyComplete
+>>>>>>> master
