@@ -1,0 +1,26 @@
+*{
+    margin: 0%;
+}
+
+.contenedor1{
+    display: flex;
+    justify-content:space-between;
+    
+}
+.btn-add_mascota{
+   float: left;
+   padding-left: 10px ;
+
+}
+.buscar_mascota{
+    float: right;
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+.buscar-ico{
+    padding:10px;
+    margin:10px ;
+        
+}

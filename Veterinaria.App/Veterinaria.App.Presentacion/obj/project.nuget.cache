@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "DxldiYtsoOYWYhWrWnhOtwu33+AyejO1x42WMLfmrW66UYMLM3GHCj5j2vLRpONuG84KJrF2ILwyir4sfOivkw==",
+  "dgSpecHash": "dTWCrYADCCn+wuiS6B1ct5k7Xn6VXjIOv1ArFxdPAsGor8/83K5hNgHyiRs1chXeo3Q6y4gQr0t/BB/fo1dlUQ==",
   "success": true,
-  "projectFilePath": "G:\\My Drive\\MisionTIC 2022\\GIT\\VeterinariaMisionTIC2022\\VeterinariaMisionTIC2022\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\todo\\cursos virt\\MINTIC\\ciclo3\\programacion\\proyecto veterinaria\\Veterinaria\\Veterinaria.App\\Veterinaria.App.Presentacion\\Veterinaria.App.Presentacion.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\GAMER\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.11\\microsoft.netcore.app.host.win-x64.3.1.11.nupkg.sha512"
+  ],
   "logs": []
 }
