@@ -1,5 +1,5 @@
 *{
-    margin: 1%;
+    margin: 0%;
 }
 
 .contenedor1{
@@ -14,4 +14,13 @@
 }
 .buscar_mascota{
     float: right;
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+.buscar-ico{
+    padding:10px;
+    margin:10px ;
+        
 }
