@@ -19,7 +19,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Inicio</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">
+                                <i class="fas fa-home"></i>
+                            Inicio
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Login/Login">Login</a>
@@ -31,13 +34,19 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Administrador/Administrador">Administrador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Veterinario/Veterinario">Veterinario</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Veterinario/Veterinario">
+                                <i class="fas fa-user-nurse"></i>
+                                Veterinario
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Cuidador/Cuidador">Cuidador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Mascota/Mascota">Mascota</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Mascota/Mascota">
+                                <i class="fas fa-paw"></i>
+                                Mascota
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/SobreNosotros/SobreNosotros">Sobre Nosotros</a>
@@ -65,5 +74,8 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
+
+    <!-- Font awesome -->
+<script src="https://kit.fontawesome.com/5f9c3bf3c5.js" crossorigin="anonymous"></script>
 </body>
 </html>

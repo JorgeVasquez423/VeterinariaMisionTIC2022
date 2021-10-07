@@ -4,46 +4,334 @@
     ViewData["Title"] = "Gestión del Veterinario";
 }
 
+<style>
+    * {
+        margin: 0%;
+    }
+
+    .contenedor1 {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 15px;
+
+
+    }
+
+    .btn-add_mascota {
+        float: left;
+        padding-left: 10px;
+
+    }
+
+    .buscar_mascota {
+        float: right;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+</style>
+
+
 <div class="text-center">
     <h1 class="display-4">Gestión del Veterinario</h1>
-    <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p>
+    <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a
+            href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p>
 </div>
 
+@* --- *@
+
+
+<div class="container contenedor1">
+    <!-- btn agregar -->
+    <div class="btn-add_mascota">
+        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Nuevo</a>
+    </div>
+
+    <!-- buscar -->
+    <div class=" buscar_mascota ">
+        <input type="text" class="form-control" placeholder="Buscar">
+        <i class="fas fa-search"></i>
+    </div>
+</div>
+
+<!-- tabla listar -->
+<div class="container ">
+
+    <div class="table-responsive  ">
+        <table class="table table-striped ">
+            <caption>Lista de mascotas</caption>
+            <thead>
+                <tr class="bg-dark" style=" color:white">
+                    <th scope="col">#</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Genero</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Telefono</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @* @foreach (Mascotax m in Model.listaMascotas) *@ @* le agregue la x por que no lo reconocia como tipo
+                *@
+                @* { *@
+                @*
+
+                    <tr>
+                    <th scope="row">1 </th>
+                    <td>@m.Nombre</td>
+                    <td>@m.Especie</td>
+                    <td>@m.Raza</td>
+                    <td>@m.Edad</td>
+
+                    <td>
+                    <button class="btn btn-danger">
+                    <i class="far fa-trash-alt"></i>
+                    </button>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
+                    <i class="far fa-eye"></i>
+                    </button>
+                    <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal">
+                    <i class="far fa-edit"></i>
+                    </button>
+                    </td>
+                    </tr>
+
+                *@
+                @* } *@
+
+                @for (int i = 0; i < 2; i++)
+                {
+                    <tr>
+                        <th scope="row">1 </th>
+                        <td>vet @i</td>
+                        <td>bb</td>
+                        <td>ccc</td>
+                        <td>ddd</td>
+                        <td>eee</td>
+                        <td>fff</td>
+                        <td>Opciones</td>
+
+
+                        <td>
+                            <button class="btn btn-danger">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                            <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
+                                <i class="far fa-eye"></i>
+                            </button>
+                            <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal">
+                                <i class="far fa-edit"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+@* modal add mascota *@
 <div>
-    <form>
-        <div class="form-group">
-            <label for="NombreVeterinario">Nombres</label>
-            <input type="text" class="form-control" id="NombreVeterinario" placeholder="Ingrese su nombre">
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Crear Veterinario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @* form agregar Veterinario *@
+                    <div>
+                        <form>
+                            <div class="form-group">
+                                <label for="NombreVeterinario">Nombres</label>
+                                <input type="text" class="form-control" id="NombreVeterinario"
+                                    placeholder="Ingrese su nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="ApellidoVeterinario">Apellidos</label>
+                                <input type="text" class="form-control" id="ApellidoVeterinario"
+                                    placeholder="Ingrese su apellido">
+                            </div>
+                            <div class="form-group">
+                                <label for="EdadVeterinario">Edad</label>
+                                <input type="number" class="form-control" id="EdadVeterinario"
+                                    placeholder="Ingrese su edad">
+                            </div>
+                            <div class="form-group">
+                                <label for="GeneroVeterinario">Genero</label>
+                                <input type="text" class="form-control" id="GeneroVeterinario"
+                                    placeholder="Ingrese su Genero">
+                            </div>
+                            <div class="form-group">
+                                <label for="EmailVeterinario">e-mail</label>
+                                <input type="email" class="form-control" id="EmailVeterinario"
+                                    placeholder="Ingrese su e-mail">
+                            </div>
+                            <div class="form-group">
+                                <label for="TelefonoVeterinario">Teléfono</label>
+                                <input type="number" class="form-control" id="TelefonoVeterinario"
+                                    placeholder="Ingrese su Teléfono">
+                            </div>
+                            <div class="form-group">
+                                <label for="EspecializacionVeterinario">Especialización</label>
+                                <input type="text" class="form-control" id="EspecializacionVeterinario"
+                                    placeholder="Ingrese su Especialización">
+                            </div>
+                            <div class="form-group">
+                                <label for="TarjetaVeterinario">Tarjeta Profesional</label>
+                                <input type="text" class="form-control" id="TarjetaVeterinario"
+                                    placeholder="Ingrese su Tarjeta Profesional">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="ApellidoVeterinario">Apellidos</label>
-            <input type="text" class="form-control" id="ApellidoVeterinario" placeholder="Ingrese su apellido">
+    </div>
+
+</div>
+
+@* modal Edit mascota *@
+<div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EditModalLabel">Editar Veterinario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @* form Edit mascota *@
+                    @* form agregar Veterinario *@
+                    <div>
+                        <form>
+                            <div class="form-group">
+                                <label for="NombreVeterinario">Nombres</label>
+                                <input type="text" class="form-control" id="NombreVeterinario"
+                                    placeholder="Ingrese su nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="ApellidoVeterinario">Apellidos</label>
+                                <input type="text" class="form-control" id="ApellidoVeterinario"
+                                    placeholder="Ingrese su apellido">
+                            </div>
+                            <div class="form-group">
+                                <label for="EdadVeterinario">Edad</label>
+                                <input type="number" class="form-control" id="EdadVeterinario"
+                                    placeholder="Ingrese su edad">
+                            </div>
+                            <div class="form-group">
+                                <label for="GeneroVeterinario">Genero</label>
+                                <input type="text" class="form-control" id="GeneroVeterinario"
+                                    placeholder="Ingrese su Genero">
+                            </div>
+                            <div class="form-group">
+                                <label for="EmailVeterinario">e-mail</label>
+                                <input type="email" class="form-control" id="EmailVeterinario"
+                                    placeholder="Ingrese su e-mail">
+                            </div>
+                            <div class="form-group">
+                                <label for="TelefonoVeterinario">Teléfono</label>
+                                <input type="number" class="form-control" id="TelefonoVeterinario"
+                                    placeholder="Ingrese su Teléfono">
+                            </div>
+                            <div class="form-group">
+                                <label for="EspecializacionVeterinario">Especialización</label>
+                                <input type="text" class="form-control" id="EspecializacionVeterinario"
+                                    placeholder="Ingrese su Especialización">
+                            </div>
+                            <div class="form-group">
+                                <label for="TarjetaVeterinario">Tarjeta Profesional</label>
+                                <input type="text" class="form-control" id="TarjetaVeterinario"
+                                    placeholder="Ingrese su Tarjeta Profesional">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="EdadVeterinario">Edad</label>
-            <input type="number" class="form-control" id="EdadVeterinario" placeholder="Ingrese su edad">
+    </div>
+
+</div>
+
+@* modal view <o> mascota *@
+<div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="ViewModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EditModalLabel">Vista Veterinario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @* vista mascota *@
+                    <div>
+                        <div>
+                            <img src="https://zoovetesmipasion.com/wp-content/uploads/2017/04/veterinario-731x535.png"
+                                alt="" width="200px" height="">
+                        </div>
+                        <h6>Nombre:</h6>
+                        <h6>Especialización:</h6>
+                        <h6>numero tarjeta profecional:</h6>
+                        <h6>Descripción:</h6>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="GeneroVeterinario">Genero</label>
-            <input type="text" class="form-control" id="GeneroVeterinario" placeholder="Ingrese su Genero">
-        </div>
-        <div class="form-group">
-            <label for="EmailVeterinario">e-mail</label>
-            <input type="email" class="form-control" id="EmailVeterinario" placeholder="Ingrese su e-mail">
-        </div>
-        <div class="form-group">
-            <label for="TelefonoVeterinario">Teléfono</label>
-            <input type="number" class="form-control" id="TelefonoVeterinario" placeholder="Ingrese su Teléfono">
-        </div>
-        <div class="form-group">
-            <label for="EspecializacionVeterinario">Especialización</label>
-            <input type="text" class="form-control" id="EspecializacionVeterinario" placeholder="Ingrese su Especialización">
-        </div>
-        <div class="form-group">
-            <label for="TarjetaVeterinario">Tarjeta Profesional</label>
-            <input type="text" class="form-control" id="TarjetaVeterinario" placeholder="Ingrese su Tarjeta Profesional">
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
+    </div>
+
+</div>
+
+
+<!-- Font awesome -->
+<script src="https://kit.fontawesome.com/5f9c3bf3c5.js" crossorigin="anonymous"></script>
+
+@* ---- *@
+
+
+<div>
+
 </div>
