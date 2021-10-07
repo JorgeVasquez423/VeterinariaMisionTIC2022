@@ -164,3 +164,4 @@ E:\Programacion Mision Tic_SAHO\Ciclo_3\Desarrollo se Software_SAHO\Section Tree
 E:\Programacion Mision Tic_SAHO\Ciclo_3\Desarrollo se Software_SAHO\Section Tree\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.genruntimeconfig.cache
 E:\Programacion Mision Tic_SAHO\Ciclo_3\Desarrollo se Software_SAHO\Section Tree\GIT\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Veterinaria.App.Presentacion.csproj.CopyComplete
 >>>>>>> master
+D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\SobreNosotros\SobreNosotros.cshtml.g.cs

@@ -27,6 +27,8 @@
         border-radius: 10px;
         padding-top: 80px;
 
+        box-shadow: 5px 10px 5px #aaaaaa;
+
 
     }
 
@@ -51,9 +53,15 @@
         margin: 0%;
         width: 100px;
         padding-left: 100px;
-
-
-
+    }
+    .password-reset{
+        text-align: center; 
+        padding: 1px;  
+        margin-top: 10px;
+    }
+    .new-registro{
+        text-align: center;   
+        padding: 1px;  
 
     }
 </style>
@@ -70,17 +78,17 @@
     </nav>
 </div>
 
-<div class="text-center">
+@* <div class="text-center">
     <h1 class="display-4">Login</h1>
     <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p>
-</div>
+</div> *@
 
 <!-- Contenido -->
 <div class="content">
     <!-- img -->
     <div class="icon-login">
 
-        <img src="icon-login.png" alt="">
+        <img src="https://miguelhernandez.site/pventa/assets/img/login_icon.png" alt="" class="rounded mx-auto d-block">
 
     </div>
     <section class="login">
@@ -100,6 +108,19 @@
             <!-- boton enviar form -->
             <div class="d-grid gap-2 col-3 mx-auto">
                 <a class="btn btn-primary" type="submit" href="">Iniciar</a>
+            </div>
+
+            @* recuperar password *@
+            <div class="password-reset">
+                <h6>
+                    <a href="">Recuperar Contraseña</a>
+                </h6>
+            </div>
+            @* registrarse *@
+            <div class="new-registro">
+                <h6>
+                    <a href="https://localhost:5001/Administrador/Administrador">Registrarse</a>
+                </h6>
             </div>
 
 
