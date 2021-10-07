@@ -17,16 +17,67 @@ namespace Veterinaria.App.Persistencia
         /*  */
 
         public Vacuna addVacuna(Vacuna vacuna){
+            var vacunaAdicionado = this.appContext.Vacunas.Add(vacuna);
+            this.appContext.SaveChanges();
+            Console.WriteLine("Cuidador agregado");
+
+            return vacunaAdicionado.Entity;
+        }
+        public Vacuna editVacuna(Vacuna vacunaNuevo){
+            var vacunaEncontrado =
+                this
+                    .appContext
+                    .Vacunas
+                    .FirstOrDefault(v => v.Id == vacunaNuevo.Id);
+
+            if (vacunaEncontrado != null)
+            {
+                vacunaEncontrado.Codigo = vacunaNuevo.Codigo;
+                vacunaEncontrado.Nombre = vacunaNuevo.Nombre;
+                
+                this.appContext.SaveChanges();
+            }
+
             return null;
         }
-        public Vacuna editVacuna(Vacuna vacuna){
-            return null;
+        public void eliminarVacuna(int idVacuna){
+            var vacunaEncontrado =
+                this
+                    .appContext
+                    .Vacunas
+                    .FirstOrDefault(v => v.Id == idVacuna);
+
+            if (vacunaEncontrado == null)
+            {
+                //return null;
+                //var x=5;
+                Console
+                    .WriteLine("no existe el id de la Vacuna que desea eliminar");
+                return;
+            }
+            else
+            {
+                this.appContext.Vacunas.Remove(vacunaEncontrado);
+                this.appContext.SaveChanges();
+                Console.WriteLine("Vacuna Eliminada");
+            }
         }
-        public void eliminarVacuna(int vacuna){
-            return ;
-        }
-        public Vacuna GetVacuna(int vacuna){
-            return null;
+        public Vacuna GetVacuna(int idVacuna){
+            var vacunaEncontrado =
+                this
+                    .appContext
+                    .Vacunas
+                    .FirstOrDefault(v => v.Id == idVacuna);
+
+            if (vacunaEncontrado != null)
+            {
+                return vacunaEncontrado;
+            }
+            else
+            {
+                Console.WriteLine("Cuidador no encontrado");
+                return null;
+            }
         }
         public IEnumerable<Vacuna> GetVacuna(){
             return null;
