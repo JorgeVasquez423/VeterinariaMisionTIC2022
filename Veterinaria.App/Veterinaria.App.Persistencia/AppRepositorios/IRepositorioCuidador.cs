@@ -7,11 +7,11 @@ namespace Veterinaria.App.Persistencia{
 
     public interface IRepositorioCuidador
     {
-        public Cuidador addCuidador(Cuidador cuidador);
-        public Cuidador editCuidador(Cuidador cuidador);
-        public void eliminarCuidador(int idCuidador);
-        public Cuidador GetCuidador(int idCuidador);
-        public IEnumerable<Cuidador> GetCuidadores();
+        Cuidador addCuidador(Cuidador cuidador);
+        Cuidador editCuidador(Cuidador cuidador);
+        void eliminarCuidador(int idCuidador);
+        Cuidador GetCuidador(int idCuidador);
+        IEnumerable<Cuidador> GetCuidadores();
 
     }
 }

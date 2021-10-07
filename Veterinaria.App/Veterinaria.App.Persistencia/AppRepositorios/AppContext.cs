@@ -23,6 +23,10 @@ namespace Veterinaria.App.Persistencia
         public DbSet<HistoriaClinica> HistoriaClinicas { get; set;}
 
         public DbSet<Vacuna> Vacunas { get; set;}
+        public DbSet<SugerenciaCuidado> SugerenciaCuidados { get; set;}
+        
+        
+
 
 
 
