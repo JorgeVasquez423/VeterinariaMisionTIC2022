@@ -1,139 +1,248 @@
 ﻿@page
-@model IndexModel
+@* @model IndexModel *@
+@model Veterinaria.App.Presentacion.Pages.MascotaModel
 @{
     ViewData["Title"] = "Gestión de la Mascota";
 }
 
+
 <style>
-    *{
-    margin: 0%;
-}
+    * {
+        margin: 0%;
+    }
 
-.contenedor1{
-    display: flex;
-    justify-content:space-between;
-    
-}
-.btn-add_mascota{
-   float: left;
-   padding-left: 10px ;
+    .contenedor1 {
+        display: flex;
+        justify-content: space-between;
 
-}
-.buscar_mascota{
-    float: right;
-    display: flex;
-    justify-content:flex-start;
-    align-items:center;
-}
+    }
+
+    .btn-add_mascota {
+        float: left;
+        padding-left: 10px;
+
+    }
+
+    .buscar_mascota {
+        float: right;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
 </style>
 
 <div class="text-center">
     <h1 class="display-4">Gestión de la Mascota</h1>
-    <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p>
+    <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a
+            href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p>
 </div>
 
 <div>
-        <nav>
-            <h1>
-                <a href="#">Veterinaria</a>
-            </h1>
-        </nav>
-    </div>
-    
-    <div class="container contenedor1">
-        <!-- btn agregar -->
-        <div class="btn-add_mascota">
-            <a href="" class="btn btn-primary">Nuevo</a>
-    
-        </div>
-    
-        <!-- buscar -->
-        <div class=" buscar_mascota ">
-            <input type="text" class="form-control" placeholder="Buscar">
-            <i class="fas fa-search"></i>
-        </div>
+    <nav>
+        <h1>
+            <a href="#">Veterinaria</a>
+        </h1>
+    </nav>
+</div>
+
+<div class="container contenedor1">
+    <!-- btn agregar -->
+    <div class="btn-add_mascota">
+        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Nuevo</a>
     </div>
 
-    <!-- tabla listar -->
-    <div class="container ">
+    <!-- buscar -->
+    <div class=" buscar_mascota ">
+        <input type="text" class="form-control" placeholder="Buscar">
+        <i class="fas fa-search"></i>
+    </div>
+</div>
 
-        <div class="table-responsive  ">
-            <table class="table table-striped ">
-                <caption>Lista de mascotas</caption>
-                <thead>
-                    <tr class="bg-dark" style=" color:white">
-                        <th scope="col">#</th>
-                        <th scope="col">nombre</th>
-                        <th scope="col">Especie Mascota</th>
-                        <th scope="col">Raza Mascota</th>
-                        <th scope="col">Edad Mascota</th>
-                        <th scope="col">Opciones </th>
-                    </tr>
-                </thead>
-                <tbody>
+<!-- tabla listar -->
+<div class="container ">
+
+    <div class="table-responsive  ">
+        <table class="table table-striped ">
+            <caption>Lista de mascotas</caption>
+            <thead>
+                <tr class="bg-dark" style=" color:white">
+                    <th scope="col">#</th>
+                    <th scope="col">nombre</th>
+                    <th scope="col">Especie Mascota</th>
+                    <th scope="col">Raza Mascota</th>
+                    <th scope="col">Edad Mascota</th>
+                    <th scope="col">Opciones </th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                @foreach (Mascotax m in Model.listaMascotas) @* le agregue la x por que no lo reconocia como tipo *@
+                {
+                    
+
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>mdo</td>
+                        <th scope="row">1 </th>
+                        <td>@m.Nombre</td>
+                        <td>@m.Especie</td>
+                        <td>@m.Raza</td>
+                        <td>@m.Edad</td>
 
                         <td>
-                            <button class="btn btn-danger">                                
+                            <button class="btn btn-danger">
                                 <i class="far fa-trash-alt"></i>
                             </button>
-                            <button class="btn btn-success">       
-                                <i class="far fa-eye"></i>                         
+                            <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
+                                <i class="far fa-eye"></i>
                             </button>
-                            <button class="btn btn-warning">
-                                <i class="far fa-edit"></i>                                
+                            <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal">
+                                <i class="far fa-edit"></i>
                             </button>
                         </td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>fat</td>
-                        <td>mdo</td>
-
-                        <td>
-                            <button class="btn btn-danger">                                
-                                <i class="far fa-trash-alt"></i>
-                            </button>
-                            <button class="btn btn-success">       
-                                <i class="far fa-eye"></i>                         
-                            </button>
-                            <button class="btn btn-warning">
-                                <i class="far fa-edit"></i>                                
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>twitter</td>
-                        <td>mdo</td>
-
-                        <td>
-                            <button class="btn btn-danger">                                
-                                <i class="far fa-trash-alt"></i>
-                            </button>
-                            <button class="btn btn-success">       
-                                <i class="far fa-eye"></i>                         
-                            </button>
-                            <button class="btn btn-warning">
-                                <i class="far fa-edit"></i>                                
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
 
 
+                }
+
+                @for (int i = 0; i < 2; i++)
+                {
+
+
+                }
+
+
+
+            </tbody>
+        </table>
     </div>
+
+
+</div>
+
+@* modal add mascota *@
+<div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Crear Mascota</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @* form agregar mascota *@
+                    <div>
+                        <form>
+                            <div class="form-group">
+                                @* nombre mascota *@
+                                <label for="add-Mascota">Nombre:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Nombre">
+                                @* Especie mascota *@
+                                <label for="add-Mascota">Especie:</label>
+                                <input type="text" class="form-control" id="Especie" placeholder="Especie">
+                                @* Raza mascota *@
+                                <label for="add-Mascota">Raza:</label>
+                                <input type="text" class="form-control" id="Raza" placeholder="Raza">
+                                @* Edad mascota *@
+                                <label for="add-Mascota">Edad:</label>
+                                <input type="number" class="form-control" id="Edad" placeholder="Edad">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@* modal Edit mascota *@
+<div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EditModalLabel">Editar Mascota</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @* form Edit mascota *@
+                    <div>
+                        <form>
+                            <div class="form-group">
+                                @* nombre mascota *@
+                                <label for="add-Mascota">Nombre:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Nombre">
+                                @* Especie mascota *@
+                                <label for="add-Mascota">Especie:</label>
+                                <input type="text" class="form-control" id="Especie" placeholder="Especie">
+                                @* Raza mascota *@
+                                <label for="add-Mascota">Raza:</label>
+                                <input type="text" class="form-control" id="Raza" placeholder="Raza">
+                                @* Edad mascota *@
+                                <label for="add-Mascota">Edad:</label>
+                                <input type="number" class="form-control" id="Edad" placeholder="Edad">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@* modal view <o> mascota *@
+<div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="ViewModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EditModalLabel">Vista Mascota</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @* vista mascota *@
+                    <div>
+                        <div>
+                            <img src="https://s1.eestatic.com/2020/08/26/curiosidades/mascotas/mascotas-perros-gatos_515959375_158488465_1706x960.jpg"
+                                alt="" width="100px" height="">
+                        </div>
+                        <h6>Nombre:</h6>
+                        <h6>descripción:</h6>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 
 <!-- Font awesome -->
-    <script src="https://kit.fontawesome.com/5f9c3bf3c5.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/5f9c3bf3c5.js" crossorigin="anonymous"></script>
