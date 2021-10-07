@@ -16,6 +16,16 @@ namespace Veterinaria.App.Persistencia
 
         public DbSet<Mascota> Mascotas { get; set;}
 
+        public DbSet<Agenda> Agendas { get; set;}
+
+        public DbSet<Cita> Citas { get; set;}
+
+        public DbSet<HistoriaClinica> HistoriaClinicas { get; set;}
+
+        public DbSet<Vacuna> Vacunas { get; set;}
+
+
+
         protected override void OnConfiguring(
             DbContextOptionsBuilder optionsBuilder
         )
