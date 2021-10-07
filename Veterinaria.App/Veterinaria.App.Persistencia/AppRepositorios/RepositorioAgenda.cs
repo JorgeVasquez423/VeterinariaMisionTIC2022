@@ -14,6 +14,33 @@ namespace Veterinaria.App.Persistencia
             this.appContext = appContextParam;
         }
 
+        /*  */
+        public Agenda addAgenda(Agenda agenda){
+            return null;
+
+
+        }
+        public Agenda editAgenda(Agenda agenda){
+            return null;
+
+
+        }
+        public void eliminarAgenda(int agenda){
+            return ;
+
+
+        }
+        public Agenda GetAgenda(int agenda){
+            return null;
+
+
+        }
+        public IEnumerable<Agenda> GetAgenda(){
+            return null;
+
+
+        }
+
         
     }
 }

@@ -14,6 +14,26 @@ namespace Veterinaria.App.Persistencia
             this.appContext = appContextParam;
         }
 
+        /*  */
+
+        public HistoriaClinica addHistoriaClinica(HistoriaClinica historiaClinica){
+            return null;
+        }
+        public HistoriaClinica editHistoriaClinica(HistoriaClinica historiaClinica){
+            return null;
+        }
+        public void eliminarHistoriaClinica(int historiaClinica){
+            return ;
+        }
+        public HistoriaClinica GetHistoriaClinica(int historiaClinica){
+            return null;
+        }
+        public IEnumerable<HistoriaClinica> GetHistoriaClinica(){
+            return null;
+        }
+
+        /*  */
+
         
     }
 }

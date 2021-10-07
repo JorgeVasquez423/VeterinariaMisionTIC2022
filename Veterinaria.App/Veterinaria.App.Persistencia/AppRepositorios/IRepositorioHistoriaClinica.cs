@@ -9,12 +9,12 @@ namespace Veterinaria.App.Persistencia{
 
         
         
-        /* Administrador addAdministrador(Administrador administrador);
-        Administrador editAdministrador(Administrador administrador);
-        void eliminarAdministrador(int administrador);
-        Administrador GetAdministrador(int administrador);
-        IEnumerable<Administrador> GetAdministrador();
- */
+        HistoriaClinica addHistoriaClinica(HistoriaClinica historiaClinica);
+        HistoriaClinica editHistoriaClinica(HistoriaClinica historiaClinica);
+        void eliminarHistoriaClinica(int historiaClinica);
+        HistoriaClinica GetHistoriaClinica(int historiaClinica);
+        IEnumerable<HistoriaClinica> GetHistoriaClinica();
+
 
         
     }

@@ -9,13 +9,13 @@ namespace Veterinaria.App.Persistencia{
 
         
         
-        /* Administrador addAdministrador(Administrador administrador);
-        Administrador editAdministrador(Administrador administrador);
-        void eliminarAdministrador(int administrador);
-        Administrador GetAdministrador(int administrador);
-        IEnumerable<Administrador> GetAdministrador();
+        Cita addCita(Cita cita);
+        Cita editCita(Cita cita);
+        void eliminarCita(int cita);
+        Cita GetCita(int cita);
+        IEnumerable<Cita> GetCita();
 
- */
+
         
     }
 }

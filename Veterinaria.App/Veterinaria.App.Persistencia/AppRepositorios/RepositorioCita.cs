@@ -14,6 +14,26 @@ namespace Veterinaria.App.Persistencia
             this.appContext = appContextParam;
         }
 
+        /*  */
+        public Cita addCita(Cita cita){
+            return null;
+             
+         }
+        public Cita editCita(Cita cita){
+            return null;
+        }
+        public void eliminarCita(int cita){
+            return ;
+        }
+        public Cita GetCita(int cita){
+            return null;
+        }
+        public IEnumerable<Cita> GetCita(){
+            return null;
+        }
+        /*  */
+
+
         
     }
 }

@@ -9,11 +9,11 @@ namespace Veterinaria.App.Persistencia{
 
         
         
-       /*  Administrador addAdministrador(Administrador administrador);
-        Administrador editAdministrador(Administrador administrador);
-        void eliminarAdministrador(int administrador);
-        Administrador GetAdministrador(int administrador);
-        IEnumerable<Administrador> GetAdministrador(); */
+        Vacuna addVacuna(Vacuna vacuna);
+        Vacuna editVacuna(Vacuna vacuna);
+        void eliminarVacuna(int vacuna);
+        Vacuna GetVacuna(int vacuna);
+        IEnumerable<Vacuna> GetVacuna();
 
 
         

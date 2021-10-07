@@ -14,6 +14,26 @@ namespace Veterinaria.App.Persistencia
             this.appContext = appContextParam;
         }
 
+        /*  */
+
+        public Vacuna addVacuna(Vacuna vacuna){
+            return null;
+        }
+        public Vacuna editVacuna(Vacuna vacuna){
+            return null;
+        }
+        public void eliminarVacuna(int vacuna){
+            return ;
+        }
+        public Vacuna GetVacuna(int vacuna){
+            return null;
+        }
+        public IEnumerable<Vacuna> GetVacuna(){
+            return null;
+        }
+
+        /*  */
+
         
     }
 }
