@@ -5,25 +5,35 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
+/* importacion despues de hacer la referencia de las 2 capas  */
+ using Veterinaria.App.Dominio;
+ using Veterinaria.App.Persistencia;
+
+
 namespace Veterinaria.App.Servicios.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
+
+        /* veterinario */
+        private static IRepositorioVeterinario repositorioVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
+        /* fin veterinario */
+        /* private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        }; */
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        // private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        /* public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
+        */
 
-        [HttpGet]
+        /* [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
@@ -34,6 +44,30 @@ namespace Veterinaria.App.Servicios.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        } */
+
+        [HttpGet]
+        public /* String */IEnumerable<Veterinario> Get()
+        {
+            /* var rng = new Random();
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = rng.Next(-20, 55),
+                Summary = Summaries[rng.Next(Summaries.Length)]
+            })
+            .ToArray(); */
+
+            var veterinarioEncontrado = repositorioVeterinario.GetVeterinario(2);
+
+            var listaVeterinaros = repositorioVeterinario.GetVeterinario();
+
+            var data = "{Nombre: "+ veterinarioEncontrado.Nombre+" } ";
+            data.ToArray();
+
+
+            return listaVeterinaros;
+            
         }
     }
 }
