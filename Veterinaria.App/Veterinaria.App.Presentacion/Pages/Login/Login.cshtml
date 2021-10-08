@@ -2,11 +2,19 @@
 @model Veterinaria.App.Presentacion.Pages.LoginModel
 
 @{
-    ViewData["Title"] = "Gestión de la Mascota";
+    ViewData["Title"] = "Login Veterinaria";
 }
 <style>
     * {
         margin: 0%;
+    }
+
+    body{
+        background: url(https://lh3.googleusercontent.com/proxy/kdQFTiovtWMcx_Nk4Y_xe-Pb8OX8zv-YH_BCJs07mMykCNv1bD-1bDzvHLDrntgrvUKzqhboJbN25mUX4fkixtyQlgVIejL-EG_lcBc5O7BqAMet0PoahaaIIqLjBD0tJ7kpCaHSFwmF6OS2Ysc);
+
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-position: 10% ;
     }
 
     .content {
@@ -28,6 +36,12 @@
         padding-top: 80px;
 
         box-shadow: 5px 10px 5px #aaaaaa;
+        background: url(https://tvazteca.brightspotcdn.com/8a/31/77d4a4ae46a5be92e73cb8fd9d11/mascotas.jpg);
+
+        background-repeat: no-repeat;
+        background-size: 300px;
+        background-position-x: center;
+
 
 
     }
@@ -61,9 +75,16 @@
     }
     .new-registro{
         text-align: center;   
-        padding: 1px;  
+        padding: 1px;    
 
     }
+
+    .warnings{
+        color: red;
+        text-align: center;
+        
+    }
+
 </style>
 
 
@@ -95,19 +116,19 @@
 
 
 
-        <form action="">
+        <form action="" id="form">
             <!-- 1 -->
             <div class="mb-3 input-login">
-                <input type="usuario" class="form-control" placeholder="name@example.com">
+                <input type="email" class="form-control" id="name" placeholder="name@example.com">
             </div>
             <div class="mb-3 input-login">
-                <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Contraseña"
-                    required>
+                <input type="password" class="form-control" id="password" placeholder="Contraseña" >
             </div>
 
             <!-- boton enviar form -->
             <div class="d-grid gap-2 col-3 mx-auto">
-                <a class="btn btn-primary" type="submit" href="">Iniciar</a>
+                @* <a class="btn btn-primary" type="submit" href="">Iniciar</a> *@
+                <button class="btn btn-primary" type="submit" id="btn" href="" >Iniciar</button>
             </div>
 
             @* recuperar password *@
@@ -121,6 +142,9 @@
                 <h6>
                     <a href="https://localhost:5001/Administrador/Administrador">Registrarse</a>
                 </h6>
+            </div>
+            <div>
+                <p class="warnings" id="warnings"></p>
             </div>
 
 
@@ -142,3 +166,39 @@
 <div>
 
 </div>
+
+<script>
+    const nombre = document.getElementById("name");
+    const pass = document.getElementById('password');
+    
+    const form = document.getElementById('form');
+    const parrafo = document.getElementById('warnings')
+    console.log("asdf");
+    
+
+    
+    
+    form.addEventListener("submit" , e=>{
+        e.preventDefault();
+        let warnings = "";
+        let entrar = false;
+        let regexEmail = /^\w+([\.-]?\w+)*$\w+([\.-]?\w+)*(\.\w{2,3})+$/
+        parrafo.innerHTML = "";
+        if(pass.value.length < 6){
+            //console.log("nombre muy corto, debe tener mas de 6 caracteres");
+            warnings += `contraseña corta <br>`
+        }
+        if(!regexEmail.test(nombre.value)){
+            warnings += `Email o correo no valido  <br>`
+            entrar = true;
+            
+        }
+        if(entrar){
+            parrafo.innerHTML = warnings;
+        }
+        
+    });
+
+    
+
+</script>
