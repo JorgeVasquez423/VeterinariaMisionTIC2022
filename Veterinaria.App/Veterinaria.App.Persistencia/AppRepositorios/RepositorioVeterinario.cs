@@ -2,6 +2,7 @@ using System;
 using Veterinaria.App.Dominio;
 using System.Collections.Generic;//linkedList arrayList
 using System.Linq;
+//using System.Collections.IEnumerable;
 
 namespace Veterinaria.App.Persistencia{
 
@@ -11,9 +12,22 @@ namespace Veterinaria.App.Persistencia{
     public class RepositorioVeterinario : IRepositorioVeterinario{
         private readonly AppContext appContext;
 
+        //List<Veterinario> Vet;
+
+
         //constructor
         public RepositorioVeterinario(AppContext appContextParam){
             this.appContext = appContextParam;
+
+            //iniciar lista de veterinarios
+            /* Vet = new List<Veterinario>(){
+                new Veterinario{
+                    Id=1,
+                    Nombre = "AND",
+                    Telefono ="147"
+                }
+            }; */
+            
         }
 
         public Veterinario addVeterinario(Veterinario veterinario){
@@ -75,9 +89,14 @@ namespace Veterinaria.App.Persistencia{
             }
 
         }
-        public IEnumerable<Veterinario> GetVeterinario(){
-            return null;
 
+        public IEnumerable<Veterinario> GetVeterinario(){
+            /* var veterinarios = this.appContext.Veterinarios.FirstOrDefault(v => v.Id == 2);
+            
+            
+            return Vet;
+ */
+            return null;
         }
 
 

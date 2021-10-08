@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+/*  */
+using Veterinaria.App.Persistencia;
+
 namespace Veterinaria.App.Presentacion
 {
     public class Startup
@@ -24,6 +27,9 @@ namespace Veterinaria.App.Presentacion
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            /* veterinarios */
+            //services.AddSingleton<IRepositorioVeterinario,RepositorioVeterinario>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

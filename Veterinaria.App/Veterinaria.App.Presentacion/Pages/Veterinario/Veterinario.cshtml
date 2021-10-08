@@ -1,5 +1,5 @@
 ﻿@page
-@model IndexModel
+@model Veterinaria.App.Presentacion.Pages.VeterinarioModel
 @{
     ViewData["Title"] = "Gestión del Veterinario";
 }
@@ -326,6 +326,20 @@
     </div>
 
 </div>
+@* lista de pruba *@
+
+@* <h1>lista de prueba</h1>
+<table>
+    @foreach (var v in Model.Veterinarios)
+    {
+        <tr>
+            <td>
+                @v.Nombre
+            </td>
+        </tr>
+        
+    }
+</table> *@
 
 
 <!-- Font awesome -->
