@@ -5,12 +5,21 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
+/* importacion despues de hacer la referencia de las 2 capas  */
+ using Veterinaria.App.Dominio;
+ using Veterinaria.App.Persistencia;
+
+
 namespace Veterinaria.App.Servicios.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+
+        /* veterinario */
+        private static IRepositorioVeterinario repositorioVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
+        /* fin veterinario */
         /* private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -38,7 +47,7 @@ namespace Veterinaria.App.Servicios.Controllers
         } */
 
         [HttpGet]
-        public String Get()
+        public /* String */IEnumerable<Veterinario> Get()
         {
             /* var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -49,10 +58,15 @@ namespace Veterinaria.App.Servicios.Controllers
             })
             .ToArray(); */
 
-            var data = "{'data':'hola world'}";
+            var veterinarioEncontrado = repositorioVeterinario.GetVeterinario(2);
+
+            var listaVeterinaros = repositorioVeterinario.GetVeterinario();
+
+            var data = "{Nombre: "+ veterinarioEncontrado.Nombre+" } ";
             data.ToArray();
 
-            return data;
+
+            return listaVeterinaros;
             
         }
     }

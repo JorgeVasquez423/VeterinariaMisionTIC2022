@@ -96,7 +96,8 @@ namespace Veterinaria.App.Persistencia{
             
             return Vet;
  */
-            return null;
+            //return null;
+            return this.appContext.Veterinarios;
         }
 
 
