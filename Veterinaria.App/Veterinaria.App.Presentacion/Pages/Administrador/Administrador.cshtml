@@ -9,6 +9,8 @@
     <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p>
 </div>
 
+<button class="btn btn-primary" onclick="actualizarLista()">Actualizar Lista</button>
+
 <div>
     <form>
         <div class="form-group">
@@ -40,3 +42,20 @@
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 </div>
+
+<script>
+    function actualizarLista(){
+        //alert("hi");
+        let xhttp = new XMLHttpRequest();
+        
+        xhttp.onreadystatechange = function (){
+            if(this.readyState == 4 && this.status == 200){
+                alert(xhttp.responseText + " conexion exitosa");
+            }
+            
+            
+        }
+            xhttp.open("GET","https://localhost:5005/WeatherForecast",true);
+            xhttp.send();
+    }
+</script>
