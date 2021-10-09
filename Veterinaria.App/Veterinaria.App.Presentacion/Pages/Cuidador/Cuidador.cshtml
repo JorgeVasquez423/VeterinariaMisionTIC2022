@@ -1,47 +1,328 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Gestión del Cuidador";
+  ViewData["Title"] = "Gestión del Cuidador";
 }
 
+<style>
+  * {
+    margin: 0%;
+  }
+
+  .contenedor1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+  }
+
+  .btn-add_mascota {
+    float: left;
+    padding-left: 15px;
+
+  }
+
+  .buscar_mascota {
+    float: right;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+</style>
+
 <div class="text-center">
-    <h1 class="display-4">Gestión del Cuidador</h1>
-    <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p>
+  <h1 class="display-4">Gestión de la Cuidador</h1>
+  @* <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a
+      href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p> *@
 </div>
 
-<form>
-  <div class="form-group">
-    <label for="id-nombre-cuidador">Nombre</label>
-    <input type="text" class="form-control" id="id-nombre-cuidador" aria-describedby="emailHelp" placeholder="Ingrese aquí su nombre completo">
-    <small id="id-nombre-cuidador-ayuda" class="form-text text-muted">Nombre y apellidos.</small>
+
+
+<div class="container contenedor1">
+  <!-- btn agregar -->
+  <div class="btn-add_mascota">
+    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Nuevo</a>
   </div>
-  <div class="form-group">
-    <label for="id-telefono-cuidador">Telefono</label>
-    <input type="tel" class="form-control" id="id-telefono-cuidador" aria-describedby="emailHelp" placeholder="Ingrese aquí su número de telefono">
-    <small id="id-telefono-cuidador-ayuda" class="form-text text-muted">Número de teléfono fijo o celular.</small>
+
+  <!-- buscar -->
+  <div class=" buscar_mascota ">
+    <input type="text" class="form-control" placeholder="Buscar">
+    <i class="fas fa-search"></i>
   </div>
-  <div class="form-group">
-    <label for="id-edad-cuidador">Edad</label>
-    <input type="number" class="form-control" id="id-edad-cuidador" aria-describedby="emailHelp" placeholder="Ingrese aquí su edad">
-    <small id="id-edad-cuidador-ayuda" class="form-text text-muted">Edad en años</small>
+</div>
+
+<!-- tabla listar -->
+<div class="container ">
+
+  <div class="table-responsive  ">
+    <table class="table table-striped ">
+      <caption>Lista de mascotas</caption>
+      <thead>
+        <tr class="bg-dark" style=" color:white">
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Teléfono</th>
+          <th scope="col">Edad</th>
+          <th scope="col">Dirección</th>
+          <th scope="col">Correo </th>
+          <th scope="col">Opciones </th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+
+        @* @foreach (Mascotax m in Model.listaMascotas)
+          {
+
+
+          <tr>
+          <th scope="row">1 </th>
+          <td>@m.Nombre</td>
+          <td>@m.Especie</td>
+          <td>@m.Raza</td>
+          <td>@m.Edad</td>
+
+          <td>
+          <button class="btn btn-danger">
+          <i class="far fa-trash-alt"></i>
+          </button>
+          <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
+          <i class="far fa-eye"></i>
+          </button>
+          <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal">
+          <i class="far fa-edit"></i>
+          </button>
+          </td>
+          </tr>
+
+
+          }
+        *@
+        @for (int i = 0; i < 2; i++)
+        {
+          <tr>
+            <th scope="row">@(i+1) </th>
+            <td>qqq</td>
+            <td>www</td>
+            <td>ddd</td>
+            <td>asdf</td>
+            <td>aas</td>
+
+
+            <td>
+              <button class="btn btn-danger">
+                <i class="far fa-trash-alt"></i>
+              </button>
+              <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
+                <i class="far fa-eye"></i>
+              </button>
+              <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal">
+                <i class="far fa-edit"></i>
+              </button>
+            </td>
+          </tr>
+
+
+        }
+
+
+
+
+      </tbody>
+    </table>
   </div>
-  <div class="form-group">
-    <label for="id-direccion-cuidador">Dirección</label>
-    <input type="text" class="form-control" id="id-direccion-cuidador" aria-describedby="emailHelp" placeholder="Ingrese aquí la dirección de residencia">
-    <small id="id-direccion-cuidador-ayuda" class="form-text text-muted">Dirección completa</small>
+</div>
+
+@* modal add mascota *@
+<div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Crear Cuidador</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          @* form agregar cuidador *@
+          <div>
+            <form>
+              <div class="form-group">
+                <label for="id-nombre-cuidador">Nombre</label>
+                <input type="text" class="form-control" id="id-nombre-cuidador" aria-describedby="emailHelp"
+                  placeholder="Ingrese aquí su nombre completo">
+                <small id="id-nombre-cuidador-ayuda" class="form-text text-muted">Nombre y apellidos.</small>
+              </div>
+              <div class="form-group">
+                <label for="id-telefono-cuidador">Telefono</label>
+                <input type="tel" class="form-control" id="id-telefono-cuidador" aria-describedby="emailHelp"
+                  placeholder="Ingrese aquí su número de telefono">
+                <small id="id-telefono-cuidador-ayuda" class="form-text text-muted">Número de teléfono fijo o
+                  celular.</small>
+              </div>
+              <div class="form-group">
+                <label for="id-edad-cuidador">Edad</label>
+                <input type="number" class="form-control" id="id-edad-cuidador" aria-describedby="emailHelp"
+                  placeholder="Ingrese aquí su edad">
+                <small id="id-edad-cuidador-ayuda" class="form-text text-muted">Edad en años</small>
+              </div>
+              <div class="form-group">
+                <label for="id-direccion-cuidador">Dirección</label>
+                <input type="text" class="form-control" id="id-direccion-cuidador" aria-describedby="emailHelp"
+                  placeholder="Ingrese aquí la dirección de residencia">
+                <small id="id-direccion-cuidador-ayuda" class="form-text text-muted">Dirección completa</small>
+              </div>
+              <div class="form-group">
+                <label for="id-correo-cuidador">Correo electrónico</label>
+                <input type="email" class="form-control" id="id-correo-cuidador" aria-describedby="emailHelp"
+                  placeholder="Ingrese aquí su correo electrónico">
+                <small id="id-correo-cuidador-ayuda" class="form-text text-muted">Correo electrónico activo.</small>
+              </div>
+              @* <div class="form-group">
+                <label for="id-contrasena-cuidador">Contraseña</label>
+                <input type="password" class="form-control" id="id-contrasena-cuidador" placeholder="Contraseña">
+              </div> *@
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck">
+                <label class="form-check-label" for="exampleCheck">Acepto la <a asp-area="" asp-page="/Privacy">Política
+                    de
+                    privacidad</a>.</p></label>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="id-correo-cuidador">Correo electrónico</label>
-    <input type="email" class="form-control" id="id-correo-cuidador" aria-describedby="emailHelp" placeholder="Ingrese aquí su correo electrónico">
-    <small id="id-correo-cuidador-ayuda" class="form-text text-muted">Correo electrónico activo.</small>
+
+</div>
+
+@* modal Edit Cuidador *@
+<div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="EditModalLabel">Editar Cuidador</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          @* form Edit Cuidador *@
+          <div>
+            <form>
+              <div class="form-group">
+                <label for="id-nombre-cuidador">Nombre</label>
+                <input type="text" class="form-control" id="id-nombre-cuidador" aria-describedby="emailHelp"
+                  placeholder="Ingrese aquí su nombre completo">
+                <small id="id-nombre-cuidador-ayuda" class="form-text text-muted">Nombre y apellidos.</small>
+              </div>
+              <div class="form-group">
+                <label for="id-telefono-cuidador">Telefono</label>
+                <input type="tel" class="form-control" id="id-telefono-cuidador" aria-describedby="emailHelp"
+                  placeholder="Ingrese aquí su número de telefono">
+                <small id="id-telefono-cuidador-ayuda" class="form-text text-muted">Número de teléfono fijo o
+                  celular.</small>
+              </div>
+              <div class="form-group">
+                <label for="id-edad-cuidador">Edad</label>
+                <input type="number" class="form-control" id="id-edad-cuidador" aria-describedby="emailHelp"
+                  placeholder="Ingrese aquí su edad">
+                <small id="id-edad-cuidador-ayuda" class="form-text text-muted">Edad en años</small>
+              </div>
+              <div class="form-group">
+                <label for="id-direccion-cuidador">Dirección</label>
+                <input type="text" class="form-control" id="id-direccion-cuidador" aria-describedby="emailHelp"
+                  placeholder="Ingrese aquí la dirección de residencia">
+                <small id="id-direccion-cuidador-ayuda" class="form-text text-muted">Dirección completa</small>
+              </div>
+              <div class="form-group">
+                <label for="id-correo-cuidador">Correo electrónico</label>
+                <input type="email" class="form-control" id="id-correo-cuidador" aria-describedby="emailHelp"
+                  placeholder="Ingrese aquí su correo electrónico">
+                <small id="id-correo-cuidador-ayuda" class="form-text text-muted">Correo electrónico activo.</small>
+              </div>
+              @* <div class="form-group">
+                <label for="id-contrasena-cuidador">Contraseña</label>
+                <input type="password" class="form-control" id="id-contrasena-cuidador" placeholder="Contraseña">
+              </div> *@
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck">
+                <label class="form-check-label" for="exampleCheck">Acepto la <a asp-area="" asp-page="/Privacy">Política
+                    de
+                    privacidad</a>.</p></label>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="id-contrasena-cuidador">Contraseña</label>
-    <input type="password" class="form-control" id="id-contrasena-cuidador" placeholder="Contraseña">
+
+</div>
+
+@* modal view <o> Cuidador *@
+<div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="ViewModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="EditModalLabel">Vista Cuidador</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          @* vista Cuidador *@
+          <div>
+            <div>
+              <img
+                src="https://s1.eestatic.com/2020/08/26/curiosidades/mascotas/mascotas-perros-gatos_515959375_158488465_1706x960.jpg"
+                alt="" width="100px" height="">
+            </div>
+            <h6>Nombre:</h6>
+            <h6>descripción:</h6>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck">
-    <label class="form-check-label" for="exampleCheck">Acepto la <a asp-area="" asp-page="/Privacy">Política de privacidad</a>.</p></label>  
-  </div>
-  <button type="submit" class="btn btn-primary">Enviar</button>
-</form>
+
+</div>
+
+
+
+
+
+
+<div class="text-center">
+  <h1 class="display-4">Gestión del Cuidador</h1>
+  <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a
+      href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p>
+</div>
