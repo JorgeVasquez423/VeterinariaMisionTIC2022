@@ -18,11 +18,12 @@
         background-size: 200px;
         background-position-x: 5% ;
     }
+    
 </style>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" >
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Veterinaria.com</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
@@ -37,16 +38,12 @@
                                 Inicio
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Login/Login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Política de privacidad</a>
-                        </li>
-                        <li class="nav-item">
+                        
+                        
+                        @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area=""
                                 asp-page="/Administrador/Administrador">Administrador</a>
-                        </li>
+                        </li> *@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Veterinario/Veterinario">
                                 <i class="fas fa-user-nurse"></i>
@@ -54,7 +51,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Cuidador/Cuidador">Cuidador</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Cuidador/Cuidador">
+                                <i class="fas fa-users"></i>
+                                Cuidador
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Mascota/Mascota">
@@ -63,8 +63,21 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/SobreNosotros/SobreNosotros">Sobre
-                                Nosotros</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/SobreNosotros/SobreNosotros">
+                                <i class="fas fa-chevron-down"></i>
+                                Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">
+                                <i class="fas fa-vote-yea"></i>
+                                Política de privacidad
+                            </a>
+                        </li>
+                        <li class="nav-item" id="login">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Login/Login">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Login
+                            </a>
                         </li>
                     </ul>
                 </div>
