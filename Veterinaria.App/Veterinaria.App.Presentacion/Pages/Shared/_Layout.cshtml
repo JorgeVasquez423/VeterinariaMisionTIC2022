@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,37 +8,76 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
+
+<style>
+    body{
+        background: url(https://lh3.googleusercontent.com/proxy/kdQFTiovtWMcx_Nk4Y_xe-Pb8OX8zv-YH_BCJs07mMykCNv1bD-1bDzvHLDrntgrvUKzqhboJbN25mUX4fkixtyQlgVIejL-EG_lcBc5O7BqAMet0PoahaaIIqLjBD0tJ7kpCaHSFwmF6OS2Ysc);
+
+        background-repeat: no-repeat;
+        background-position-y: 10%;
+        background-size: 200px;
+        background-position-x: 5% ;
+    }
+    
+</style>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" >
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Veterinaria.com</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Inicio</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">
+                                <i class="fas fa-home"></i>
+                                Inicio
+                            </a>
+                        </li>
+                        
+                        
+                        @* <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area=""
+                                asp-page="/Administrador/Administrador">Administrador</a>
+                        </li> *@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Veterinario/Veterinario">
+                                <i class="fas fa-user-nurse"></i>
+                                Veterinario
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Login/Login">Login</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Cuidador/Cuidador">
+                                <i class="fas fa-users"></i>
+                                Cuidador
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Política de privacidad</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Mascota/Mascota">
+                                <i class="fas fa-paw"></i>
+                                Mascota
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Administrador/Administrador">Administrador</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/SobreNosotros/SobreNosotros">
+                                <i class="fas fa-chevron-down"></i>
+                                Sobre Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Veterinario/Veterinario">Veterinario</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">
+                                <i class="fas fa-vote-yea"></i>
+                                Política de privacidad
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Cuidador/Cuidador">Cuidador</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Mascota/Mascota">Mascota</a>
+                        <li class="nav-item" id="login">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Login/Login">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Login
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -52,8 +92,10 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; MisionTIC 2022 - Desarrollo Web Ciclo 3 - Grupo 28 - Equipo 1 - <a asp-area="" asp-page="/Privacy">Política de privacidad</a>
-            Conoce más nuestro proyecto en <a href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub.</a>
+            &copy; MisionTIC 2022 - Desarrollo Web Ciclo 3 - Grupo 28 - Equipo 1 - <a asp-area=""
+                asp-page="/Privacy">Política de privacidad</a>
+            Conoce más nuestro proyecto en <a
+                href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub.</a>
         </div>
     </footer>
 
@@ -62,5 +104,9 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/5f9c3bf3c5.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

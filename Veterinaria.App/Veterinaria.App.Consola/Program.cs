@@ -47,7 +47,7 @@ namespace Veterinaria.App.Consola
             /*Mascota*/
             //addMascota();
             //eliminarMascota(1);
-            BuscarMascota(2);
+            //BuscarMascota(2);
             //EditMascota(2);
         }
 
@@ -58,15 +58,15 @@ namespace Veterinaria.App.Consola
         {
             Veterinario veterinario =
                 new Veterinario {
-                    Nombre = "Miguel Pasaje",
-                    Telefono = "12345655",
-                    Edad = 22,
-                    Direccion = "cra 26 # 12-65",
-                    Correo = "123@veterinario.com",
-                    Contraseña = " 123",
-                    FechaRegistro = new DateTime(2021, 09, 21),
-                    Especializacion = "asdf",
-                    TarjetaProfecional = "123486"
+                    Nombre = "Sandro Perez",
+                    Telefono = "31234562",
+                    Edad = 28,
+                    Direccion = "cra 25 #13-15",
+                    Correo = "SandroPz@veterinario.com",
+                    Contraseña = " 12sdf2134",
+                    FechaRegistro = new DateTime(2021, 10, 8),
+                    Especializacion = "Perros",
+                    TarjetaProfecional = "12385216"
                 };
 
             repositorioVeterinario.addVeterinario (veterinario);

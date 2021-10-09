@@ -9,6 +9,8 @@
     <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p>
 </div>
 
+@* <button class="btn btn-primary" onclick="actualizarLista()">Actualizar Lista</button> *@
+
 <div>
     <form>
         <div class="form-group">
@@ -40,3 +42,64 @@
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 </div>
+
+<div @* id="listaV" *@>
+
+</div>
+
+<!--<script>
+    function actualizarLista(){
+        //alert("hi");
+        let xhttp = new XMLHttpRequest();
+        
+        xhttp.onreadystatechange = function (){
+            if(this.readyState == 4 && this.status == 200){
+                alert(xhttp.responseText + " conexion exitosa");
+                let datos = JSON.parse(this.responseText);
+
+                let res = document.querySelector('#listaV');
+                res.innerHTML = '';
+                for(let item of datos){
+                    console.log(item.nombre);
+                    res.innerHTML += `
+                    <tr>
+                        <td>${item.nombre}</td>
+                    <tr>
+                    `
+                
+                }
+            }
+            
+            
+        }
+
+        xhttp.open("GET","https://localhost:5005/WeatherForecast",true);
+        xhttp.send();
+
+        @* var listaV
+        $.ajax({
+            type:"GET",
+            url:"https://localhost:5005/WeatherForecast",
+            data:'text',
+            success: function(datos){
+                //alert(datos);
+                listaV = datos;                
+                document.getElementById("listaV").innerHTML = listaV;
+                let ListaV2 = JSON.parse(datos); 
+                console.log(ListaV2);
+                alert(ListaV2);
+
+                for (let item of datos){
+                    console.log(item.id);
+                }
+                
+            },
+            dataType:'text'
+        }); *@
+
+        //document.getElementById("listaV").innerHTML = listaV.Nombre;
+
+        
+    }
+</script>
+-->

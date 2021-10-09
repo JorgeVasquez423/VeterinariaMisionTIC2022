@@ -1,20 +1,127 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Veterinaria.com</h1>
-    <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p>
-</div>
+<style>
+  
+  #contenedor{
+    margin-top: 15%;
+  }
+</style>
 
-<div class="jumbotron">
-  <h1 class="display-4">Bienvenidos!</h1>
-  <p class="lead">Aplicación Web para registrar los animales atendidos en una veterinaria de animales domésticos, registro de solicitudes de cita por parte de los dueños de los animales, registro de vacunas aplicadas al animal doméstico, registro cuando un animal esté en riesgo y requiera atención especial (urgencia)..</p>
-  <hr class="my-4">
-  <p>Somos estudiantes de MisionTIC 2022 Ciclo 3. Desarrollo de Software</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="https://misiontic.ucaldas.edu.co/index.php?" role="button">Conoce más</a>
-  </p>
+<div class="container" id="contenedor">
+
+  <div class="row">
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="stats-small card card-small">
+          <div class="card-body px-0 pb-0">
+           <div class="d-flex px-3 text-center">
+                <a href="https://localhost:5001/Veterinario/Veterinario" style="width: 100%">
+                 <img src="https://img.icons8.com/ios/50/000000/medical-doctor.png" style="max-height: 40px;" />
+                <h4 style="margin-bottom: 1px;">Veterinarios</h4>
+                <span class="text-primary" style="font-size:0.9em;margin-top:1px;">Info Veterinarios</span>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="stats-small card card-small">
+          <div class="card-body px-0 pb-0">
+           <div class="d-flex px-3 text-center">
+                <a href="https://localhost:5001/Cuidador/Cuidador" style="width: 100%">
+                 <img src="https://img.icons8.com/ios-filled/50/000000/conference-background-selected.png" style="max-height: 40px;" />
+                <h4 style="margin-bottom: 1px;">Cuidadores</h4>
+                <span class="text-primary" style="font-size:0.9em;margin-top:1px;">Info Cuidadores</span>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="stats-small card card-small">
+          <div class="card-body px-0 pb-0">
+           <div class="d-flex px-3 text-center">
+                <a href="https://localhost:5001/Mascota/Mascota" style="width: 100%">
+                <img src="https://img.icons8.com/ios/50/000000/pets--v1.png" style="max-height: 40px;"/>
+                <h4 style="margin-bottom: 1px;">Mascotas</h4>
+                <span class="text-primary" style="font-size:0.9em;margin-top:1px;">info Mascotas</span>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="stats-small card card-small">
+          <div class="card-body px-0 pb-0">
+           <div class="d-flex px-3 text-center">
+              <a href="#" style="width: 100%">
+                <img src="https://img.icons8.com/ios/50/000000/open-book.png" style="max-height: 40px;"/>
+                <h4 style="margin-bottom: 1px;">Historias Clínicas   </h4>
+                <span class="text-primary" style="font-size:0.9em;margin-top:1px;">Info Historias Clínicas</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="stats-small card card-small">
+          <div class="card-body px-0 pb-0">
+           <div class="d-flex px-3 text-center">
+                <a href="#" style="width: 100%">
+                <img src="https://img.icons8.com/ios/50/000000/calendar--v2.png" style="max-height: 40px;"/>
+                <h4 style="margin-bottom: 1px;">Citas</h4>
+                <span class="text-primary" style="font-size:0.9em;margin-top:1px;">Info citas</span>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="stats-small card card-small">
+          <div class="card-body px-0 pb-0">
+           <div class="d-flex px-3 text-center">
+                <a href="#" style="width: 100%">
+                 <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-notebook-new-business-flatart-icons-outline-flatarticons.png" style="max-height: 40px;"/>
+                <h4 style="margin-bottom: 1px;"> Agenda</h4>
+                <span class="text-primary" style="font-size:0.9em;margin-top:1px;">Info Agenda</span>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="stats-small card card-small">
+          <div class="card-body px-0 pb-0">
+           <div class="d-flex px-3 text-center">
+                <a href="#" style="width: 100%">
+                <img src="https://img.icons8.com/windows/48/000000/report-file.png" style="max-height: 40px;"/>
+                <h4 style="margin-bottom: 1px;">Informes</h4>
+                <span class="text-primary" style="font-size:0.9em;margin-top:1px;">Sugerencias de Cuidado</span>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="stats-small card card-small">
+          <div class="card-body px-0 pb-0">
+           <div class="d-flex px-3 text-center">
+              <a href="#" style="width: 100%">
+                <img src="https://img.icons8.com/ios/100/000000/settings--v2.png" style="max-height: 40px;"/>
+                <h4 style="margin-bottom: 1px;">Configuración </h4>
+                <span class="text-primary" style="font-size:0.9em;margin-top:1px;">Ajustes</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
 </div>
