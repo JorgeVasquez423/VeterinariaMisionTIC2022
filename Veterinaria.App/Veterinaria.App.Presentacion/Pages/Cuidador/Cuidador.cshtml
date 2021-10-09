@@ -1,5 +1,5 @@
 ﻿@page
-@model IndexModel
+@model Veterinaria.App.Presentacion.Pages.CuidadorModel
 @{
   ViewData["Title"] = "Gestión del Cuidador";
 }
@@ -30,6 +30,7 @@
   }
 </style>
 
+@* Titulo de la pagina *@
 <div class="text-center">
   <h1 class="display-4">Gestión de la Cuidador</h1>
   @* <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a
@@ -37,79 +38,79 @@
 </div>
 
 
-
+@* Botón Nuevo *@
 <div class="container contenedor1">
-  <!-- btn agregar -->
+  <!-- Botón Nuevo -->
   <div class="btn-add_mascota">
-    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Nuevo</a>
+    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#nuevo-cuidador-modal">Nuevo</a>
   </div>
 
-  <!-- buscar -->
+  <!-- Campo buscar -->
   <div class=" buscar_mascota ">
     <input type="text" class="form-control" placeholder="Buscar">
     <i class="fas fa-search"></i>
   </div>
 </div>
 
-<!-- tabla listar -->
+<!-- Tabla listado cuidadores registrados -->
 <div class="container ">
 
   <div class="table-responsive  ">
     <table class="table table-striped ">
-      <caption>Lista de mascotas</caption>
+      <!-- Titulo del listados en la parte inferior -->
+      <caption>Lista de cuidadores registrados</caption>
+      
+      <!-- Encabezados de la tabla -->
       <thead>
         <tr class="bg-dark" style=" color:white">
           <th scope="col">#</th>
           <th scope="col">Nombre</th>
           <th scope="col">Teléfono</th>
+          <!-- 
           <th scope="col">Edad</th>
           <th scope="col">Dirección</th>
+          -->
           <th scope="col">Correo </th>
+          <!-- 
+          <th scope="col">Direccion Trabajo </th>
+          -->
           <th scope="col">Opciones </th>
-
 
         </tr>
       </thead>
       <tbody>
-
-        @* @foreach (Mascotax m in Model.listaMascotas)
-          {
-
-
-          <tr>
-          <th scope="row">1 </th>
-          <td>@m.Nombre</td>
-          <td>@m.Especie</td>
-          <td>@m.Raza</td>
-          <td>@m.Edad</td>
-
-          <td>
-          <button class="btn btn-danger">
-          <i class="far fa-trash-alt"></i>
-          </button>
-          <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
-          <i class="far fa-eye"></i>
-          </button>
-          <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal">
-          <i class="far fa-edit"></i>
-          </button>
-          </td>
-          </tr>
-
-
-          }
-        *@
-        @for (int i = 0; i < 2; i++)
+        @*
+        @foreach (Cuidadorx c in Model.listaCuidadores)
         {
+          var i=0;
           <tr>
-            <th scope="row">@(i+1) </th>
-            <td>qqq</td>
-            <td>www</td>
-            <td>ddd</td>
-            <td>asdf</td>
-            <td>aas</td>
-
-
+            <th scope="row">@(i+1)</th>
+            <td>@c.Nombre</td>
+            <td>@c.Telefono</td>
+            <td>@c.Correo</td>
+            <td>
+              <button class="btn btn-danger" title="Eliminar">
+                <i class="far fa-trash-alt"></i>
+              </button>
+              <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal" title="Visualizar">
+                <i class="far fa-eye"></i>
+              </button>
+              <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal" title="Editar">
+                <i class="far fa-edit"></i>
+              </button>
+            </td>
+          </tr>
+        }
+        *@
+        
+        @for (int i = 0; i < Model.listaCuidadores.Count; i++)
+        {
+          Cuidadorx c = Model.listaCuidadores[i];
+          <tr>
+            <th scope="row">@(i+1)</th>
+            <td>@c.Nombre</td>
+            <td>@c.Telefono</td>
+            <td>@c.Correo</td>
             <td>
               <button class="btn btn-danger">
                 <i class="far fa-trash-alt"></i>
@@ -122,74 +123,60 @@
               </button>
             </td>
           </tr>
-
-
-        }
-
-
-
-
+        } 
       </tbody>
     </table>
   </div>
 </div>
 
-@* modal add mascota *@
+@* Ventana modal para agregar nuevo cuidador *@
 <div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+  <!-- Contenido del Modal -->
+  <div class="modal fade" id="nuevo-cuidador-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Crear Cuidador</h5>
+          <h5 class="modal-title" id="nuevo-cuidador-modal">Crear Cuidador</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          @* form agregar cuidador *@
+          @* Formulario agregar cuidador *@
           <div>
             <form>
               <div class="form-group">
                 <label for="id-nombre-cuidador">Nombre</label>
-                <input type="text" class="form-control" id="id-nombre-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí su nombre completo">
-                <small id="id-nombre-cuidador-ayuda" class="form-text text-muted">Nombre y apellidos.</small>
+                <input type="text" class="form-control" id="id-nombre-cuidador" placeholder="Ingrese aquí su nombre completo">
               </div>
               <div class="form-group">
                 <label for="id-telefono-cuidador">Telefono</label>
-                <input type="tel" class="form-control" id="id-telefono-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí su número de telefono">
-                <small id="id-telefono-cuidador-ayuda" class="form-text text-muted">Número de teléfono fijo o
-                  celular.</small>
+                <input type="tel" class="form-control" id="id-telefono-cuidador" placeholder="Ingrese aquí su número de telefono">
               </div>
               <div class="form-group">
                 <label for="id-edad-cuidador">Edad</label>
-                <input type="number" class="form-control" id="id-edad-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí su edad">
-                <small id="id-edad-cuidador-ayuda" class="form-text text-muted">Edad en años</small>
+                <input type="number" class="form-control" id="id-edad-cuidador" placeholder="Ingrese aquí su edad">
               </div>
               <div class="form-group">
                 <label for="id-direccion-cuidador">Dirección</label>
-                <input type="text" class="form-control" id="id-direccion-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí la dirección de residencia">
-                <small id="id-direccion-cuidador-ayuda" class="form-text text-muted">Dirección completa</small>
+                <input type="text" class="form-control" id="id-direccion-cuidador" placeholder="Ingrese aquí la dirección de residencia">
               </div>
               <div class="form-group">
                 <label for="id-correo-cuidador">Correo electrónico</label>
-                <input type="email" class="form-control" id="id-correo-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí su correo electrónico">
-                <small id="id-correo-cuidador-ayuda" class="form-text text-muted">Correo electrónico activo.</small>
+                <input type="email" class="form-control" id="id-correo-cuidador" placeholder="Ingrese aquí su correo electrónico">
               </div>
-              @* <div class="form-group">
+              <div class="form-group">
                 <label for="id-contrasena-cuidador">Contraseña</label>
                 <input type="password" class="form-control" id="id-contrasena-cuidador" placeholder="Contraseña">
-              </div> *@
+              </div>
+              <div class="form-group">
+                <label for="id-direccionTrabajo-cuidador">Dirección Trabajo</label>
+                <input type="text" class="form-control" id="id-direccionTrabajo-cuidador" placeholder="Ingrese aquí la dirección del trabajo">
+              </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck">
-                <label class="form-check-label" for="exampleCheck">Acepto la <a asp-area="" asp-page="/Privacy">Política
+                <input type="checkbox" class="form-check-input" id="check-politica-privacidad">
+                <label class="form-check-label" for="check-politica-privacidad">Acepto la <a asp-area="" asp-page="/Privacy">Política
                     de
                     privacidad</a>.</p></label>
               </div>
@@ -204,13 +191,12 @@
       </div>
     </div>
   </div>
-
 </div>
 
-@* modal Edit Cuidador *@
+@* Ventana modal para editar nuevo cuidador *@
 <div>
 
-  <!-- Modal -->
+  <!-- Contenido del Modal -->
   <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -222,47 +208,40 @@
           </button>
         </div>
         <div class="modal-body">
-          @* form Edit Cuidador *@
+          @* Formulario editar cuidador *@
           <div>
             <form>
               <div class="form-group">
                 <label for="id-nombre-cuidador">Nombre</label>
-                <input type="text" class="form-control" id="id-nombre-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí su nombre completo">
-                <small id="id-nombre-cuidador-ayuda" class="form-text text-muted">Nombre y apellidos.</small>
+                <input type="text" class="form-control" id="id-nombre-cuidador" placeholder="Ingrese aquí su nombre completo" value=>
               </div>
               <div class="form-group">
                 <label for="id-telefono-cuidador">Telefono</label>
-                <input type="tel" class="form-control" id="id-telefono-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí su número de telefono">
-                <small id="id-telefono-cuidador-ayuda" class="form-text text-muted">Número de teléfono fijo o
-                  celular.</small>
+                <input type="tel" class="form-control" id="id-telefono-cuidador" placeholder="Ingrese aquí su número de telefono">
               </div>
               <div class="form-group">
                 <label for="id-edad-cuidador">Edad</label>
-                <input type="number" class="form-control" id="id-edad-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí su edad">
-                <small id="id-edad-cuidador-ayuda" class="form-text text-muted">Edad en años</small>
+                <input type="number" class="form-control" id="id-edad-cuidador" placeholder="Ingrese aquí su edad">
               </div>
               <div class="form-group">
                 <label for="id-direccion-cuidador">Dirección</label>
-                <input type="text" class="form-control" id="id-direccion-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí la dirección de residencia">
-                <small id="id-direccion-cuidador-ayuda" class="form-text text-muted">Dirección completa</small>
+                <input type="text" class="form-control" id="id-direccion-cuidador" placeholder="Ingrese aquí la dirección de residencia">
               </div>
               <div class="form-group">
                 <label for="id-correo-cuidador">Correo electrónico</label>
-                <input type="email" class="form-control" id="id-correo-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí su correo electrónico">
-                <small id="id-correo-cuidador-ayuda" class="form-text text-muted">Correo electrónico activo.</small>
+                <input type="email" class="form-control" id="id-correo-cuidador" placeholder="Ingrese aquí su correo electrónico">
               </div>
-              @* <div class="form-group">
+              <div class="form-group">
                 <label for="id-contrasena-cuidador">Contraseña</label>
                 <input type="password" class="form-control" id="id-contrasena-cuidador" placeholder="Contraseña">
-              </div> *@
+              </div>
+              <div class="form-group">
+                <label for="id-direccionTrabajo-cuidador">Dirección Trabajo</label>
+                <input type="text" class="form-control" id="id-direccionTrabajo-cuidador" placeholder="Ingrese aquí la dirección del trabajo">
+              </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck">
-                <label class="form-check-label" for="exampleCheck">Acepto la <a asp-area="" asp-page="/Privacy">Política
+                <input type="checkbox" class="form-check-input" id="check-politica-privacidad">
+                <label class="form-check-label" for="check-politica-privacidad">Acepto la <a asp-area="" asp-page="/Privacy">Política
                     de
                     privacidad</a>.</p></label>
               </div>
@@ -280,10 +259,10 @@
 
 </div>
 
-@* modal view <o> Cuidador *@
+@* Ventana modal para visualizar nuevo cuidador *@
 <div>
 
-  <!-- Modal -->
+  <!-- Contenido del Modal -->
   <div class="modal fade" id="ViewModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -295,7 +274,7 @@
           </button>
         </div>
         <div class="modal-body">
-          @* vista Cuidador *@
+          @* Formulario visualización cuidador *@
           <div>
             <div>
               <img
@@ -317,7 +296,22 @@
 </div>
 
 
-
+<script>
+  window.onload = actualizarLista();
+  function actualizarLista() {
+             $.ajax(
+            {
+                type: "GET", // la variable type guarda el tipo de la peticion GET,POST,..
+                url: "https://localhost:5001/WeatherForecast", //url guarda la ruta hacia donde se hace la peticion
+                data: 'text',
+                success: function (datos) { //success es una funcion que se utiliza si el servidor retorna informacion
+                    alert(datos);
+                },
+                dataType: 'text' // El tipo de datos esperados del servidor. Valor predeterminado: Intelligent Guess (xml, json, script, text, html).
+            }
+      )
+    }
+</script>
 
 
 

@@ -49,17 +49,6 @@ namespace Veterinaria.App.Servicios.Controllers
         [HttpGet]
         public /* String */IEnumerable<Veterinario> Get()
         {
-            /* var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray(); */
-
-            var veterinarioEncontrado = repositorioVeterinario.GetVeterinario(2);
-
             var listaVeterinaros = repositorioVeterinario.GetVeterinario();
 
             var data = "{Nombre: "+ veterinarioEncontrado.Nombre+" } ";
@@ -69,5 +58,8 @@ namespace Veterinaria.App.Servicios.Controllers
             return listaVeterinaros;
             
         }
+
+        
+
     }
 }
