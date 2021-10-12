@@ -70,13 +70,13 @@
                 </tr>
             </thead>
             <tbody>
-                
-                @foreach (Mascotax m in Model.listaMascotas) @* le agregue la x por que no lo reconocia como tipo *@
+                @* le agregue la x por que no lo reconocia como tipo *@
+                @foreach (var m in Model.listaMascotas)
                 {
                     
 
                     <tr>
-                        <th scope="row">1 </th>
+                        <th scope="row">@m.Id </th>
                         <td>@m.Nombre</td>
                         <td>@m.Especie</td>
                         <td>@m.Raza</td>
