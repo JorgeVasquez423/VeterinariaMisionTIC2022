@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Gestión de la Mascota";
 }
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <style>
     * {
@@ -35,7 +35,7 @@
 <div class="text-center">
     <h1 class="display-4">Gestión de la Mascota</h1>
     @* <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a
-            href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p> *@
+        href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p> *@
 </div>
 
 
@@ -73,7 +73,7 @@
                 @* le agregue la x por que no lo reconocia como tipo *@
                 @foreach (var m in Model.listaMascotas)
                 {
-                    
+
 
                     <tr>
                         <th scope="row">@m.Id </th>
@@ -82,16 +82,26 @@
                         <td>@m.Raza</td>
                         <td>@m.Edad</td>
 
-                        <td>
-                            <button class="btn btn-danger">
-                                <i class="far fa-trash-alt"></i>
-                            </button>
+                        <td style="display:flex;">
+                            <div style="width:50px;">
+                                <form method="Post">
+                                    <button class="btn btn-danger" asp-page-handler="Del" asp-route-IdMascota="@m.Id"
+                                    type="submit">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            @* <form action="GET"> *@
                             <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
                                 <i class="far fa-eye"></i>
                             </button>
-                            <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal">
+                            
+                            <a class="btn btn-warning" asp-page="/Mascota/Mascota" asp-route-IdMascota="@m.Id">
                                 <i class="far fa-edit"></i>
-                            </button>
+                            </a>
+                            @* </form> *@
+
+
                         </td>
                     </tr>
 
@@ -130,28 +140,30 @@
                 <div class="modal-body">
                     @* form agregar mascota *@
                     <div>
-                        <form>
+                        <form method="POST">
                             <div class="form-group">
                                 @* nombre mascota *@
                                 <label for="add-Mascota">Nombre:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Nombre">
+                                <input type="text" class="form-control" id="name" placeholder="Nombre" name="Nombre">
                                 @* Especie mascota *@
                                 <label for="add-Mascota">Especie:</label>
-                                <input type="text" class="form-control" id="Especie" placeholder="Especie">
+                                <input type="text" class="form-control" id="Especie" placeholder="Especie"
+                                    name="Especie">
                                 @* Raza mascota *@
                                 <label for="add-Mascota">Raza:</label>
-                                <input type="text" class="form-control" id="Raza" placeholder="Raza">
+                                <input type="text" class="form-control" id="Raza" placeholder="Raza" name="Raza">
                                 @* Edad mascota *@
                                 <label for="add-Mascota">Edad:</label>
-                                <input type="number" class="form-control" id="Edad" placeholder="Edad">
+                                <input type="number" class="form-control" id="Edad" placeholder="Edad" name="Edad">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" asp-page-handler="Add">Guardar</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Guardar</button>
-                </div>
+
             </div>
         </div>
     </div>
@@ -162,8 +174,7 @@
 <div>
 
     <!-- Modal -->
-    <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="EditModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -175,28 +186,36 @@
                 <div class="modal-body">
                     @* form Edit mascota *@
                     <div>
-                        <form>
+                        <form method="Post">
                             <div class="form-group">
+                                <input asp-for="@Model.mascotaDeEdicion.Id" type="hidden" class="form-control" id="Nombre" placeholder="name" name="Id">
                                 @* nombre mascota *@
                                 <label for="add-Mascota">Nombre:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Nombre">
-                                @* Especie mascota *@
+                                <input asp-for="@Model.mascotaDeEdicion.Nombre" type="text" class="form-control" name="Nombre" id="name" placeholder="Nombre">
+                                @* Especie mascota *@                                
                                 <label for="add-Mascota">Especie:</label>
-                                <input type="text" class="form-control" id="Especie" placeholder="Especie">
+                                <input asp-for="@Model.mascotaDeEdicion.Especie" type="text" class="form-control" name="Especie" id="Especie" placeholder="Especie">
                                 @* Raza mascota *@
                                 <label for="add-Mascota">Raza:</label>
-                                <input type="text" class="form-control" id="Raza" placeholder="Raza">
+                                <input asp-for="@Model.mascotaDeEdicion.Raza" type="text" class="form-control" id="Raza" name="Raza" placeholder="Raza">
                                 @* Edad mascota *@
                                 <label for="add-Mascota">Edad:</label>
-                                <input type="number" class="form-control" id="Edad" placeholder="Edad">
+                                <input asp-for="@Model.mascotaDeEdicion.Edad" type="number" class="form-control" name="Edad" id="Edad" placeholder="Edad">
+                            </div>
+                            <div class="modal-footer">
+                                @if (Model.modoEdicion == "edicion")
+                            {
+                                <button class="btn btn-primary" asp-page-handler="Edit">Guardar</button>
+
+                            }
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+
                             </div>
                         </form>
+
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Guardar</button>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -239,5 +258,19 @@
 </div>
 
 
+
+
+
 <!-- Font awesome -->
 <script src="https://kit.fontawesome.com/5f9c3bf3c5.js" crossorigin="anonymous"></script>
+
+@if (Model.modoEdicion == "edicion")
+{
+    <script>
+        $(document).ready(function () {
+            $('#EditModal').modal('toggle')
+        });
+    </script>
+
+}
+

@@ -24,7 +24,9 @@ namespace Veterinaria.App.Presentacion.Pages
         /* lista de mascotas */
         //public List<Mascotax> listaMascotas = new List<Mascotax>();
         public IEnumerable<Mascota> listaMascotas = new List<Mascota>();
-
+        
+        public Mascota mascotaDeEdicion;
+        public String modoEdicion = "adicion";
 
         /*------  */
         private readonly ILogger<MascotaModel> _logger;
@@ -34,28 +36,47 @@ namespace Veterinaria.App.Presentacion.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public void OnGet( int idMascota)
         {
-            // add mascota a la lista
-           /*  this.listaMascotas.Add( new Mascotax{
-                Nombre = "Rayo",
-                Especie = "Perro",
-                Raza = "pitbull",
-                Edad = "2"
-            } ); */
 
+            if (idMascota > 0)
+            {
+                this.mascotaDeEdicion = repositorioMascota.GetMascota(idMascota);     
+                this.modoEdicion = "edicion";
+                                    
+            }else
+            {
+                this.modoEdicion ="adicion";
+            }
+            
+            this.listaMascotas = repositorioMascota.GetMascota();
+            
+
+        }
+
+        public void OnPostAdd(Mascota mascotaNuevo){
+            repositorioMascota.addMascota (mascotaNuevo);
+
+            //
             this.listaMascotas = repositorioMascota.GetMascota();
         }
+
+        public void OnPostDel(int IdMascota){
+            repositorioMascota.eliminarMascota (IdMascota);
+
+            //
+            this.listaMascotas = repositorioMascota.GetMascota();
+        }
+
+        public void OnPostEdit(Mascota mascotaNuevo){
+            repositorioMascota.editMascota(mascotaNuevo);
+            //Console.WriteLine("nombre: " + mascotaNuevo.Especie);
+
+            //
+            this.listaMascotas = repositorioMascota.GetMascota();
+        }
+
+        
     }
 
-
-    /* public class Mascotax{
-
-        public String Nombre{get;set;}
-        public String Especie{get;set;}
-        public String Raza{get;set;}
-        public String Edad{get;set;}
-
-
-    } */
 }
