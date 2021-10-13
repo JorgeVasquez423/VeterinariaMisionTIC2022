@@ -20,6 +20,16 @@ namespace Veterinaria.App.Presentacion.Pages
         /* instacia de objeto veterinario */
         private static IRepositorioVeterinario repositorioVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
 
+        /* 10 oct */
+
+        public IEnumerable<Veterinario> listaVeterinario = new List<Veterinario>();
+
+        public Veterinario veterinarioDeEdicion;
+        public String modoEdicion = "adicion";
+
+
+        /* 10 oct */
+
         private readonly ILogger<VeterinarioModel> _logger;
 
         public VeterinarioModel(ILogger<VeterinarioModel> logger)
@@ -40,11 +50,45 @@ namespace Veterinaria.App.Presentacion.Pages
 
         } */
 
-        public void OnGet()
-        {
-            //Veterinarios=repoVeterinarios.GetAll();
+        public int i = 0;
 
+        public void OnGet(int idVeterinario)
+        {
+            Console.WriteLine("id: "+ idVeterinario);
+
+            if (idVeterinario > 0)
+            {
+                this.veterinarioDeEdicion = repositorioVeterinario.GetVeterinario(idVeterinario);     
+                this.modoEdicion = "edicion";
+                                    
+            }else
+            {
+                this.modoEdicion ="adicion";
+            }
             
+            this.listaVeterinario = repositorioVeterinario.GetVeterinario();
+            
+        }
+
+        public void OnPostAdd(Veterinario veterinarioNuevo){
+            repositorioVeterinario.addVeterinario(veterinarioNuevo);
+
+            //
+            this.listaVeterinario = repositorioVeterinario.GetVeterinario();
+        }
+        public void OnPostDel(int idVeterinario){
+            repositorioVeterinario.eliminarVeterinario (idVeterinario);
+
+            //
+            this.listaVeterinario = repositorioVeterinario.GetVeterinario();
+        }
+        public void OnPostEdit(Veterinario veterinarioNuevo){
+            repositorioVeterinario.editVeterinario(veterinarioNuevo);
+            //Console.WriteLine("nombre: " + mascotaNuevo.Especie);
+
+            //
+            this.listaVeterinario = repositorioVeterinario.GetVeterinario();
+
         }
     }
 }

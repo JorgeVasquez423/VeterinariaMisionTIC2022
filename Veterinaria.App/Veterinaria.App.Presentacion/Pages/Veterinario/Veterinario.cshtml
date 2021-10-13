@@ -4,6 +4,8 @@
     ViewData["Title"] = "Gestión del Veterinario";
 }
 
+
+
 <style>
     * {
         margin: 0%;
@@ -36,7 +38,7 @@
 <div class="text-center">
     <h1 class="display-4">Gestión del Veterinario</h1>
     @* <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a
-            href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p> *@
+        href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p> *@
 </div>
 
 @* --- *@
@@ -80,61 +82,38 @@
             </thead>
             <tbody id="res">
 
-                @* @foreach (Mascotax m in Model.listaMascotas) *@ @* le agregue la x por que no lo reconocia como tipo
-                *@
-                @* { *@
-                @*
+                @foreach (var v in Model.listaVeterinario)
+                {
+
 
                     <tr>
-                    <th scope="row">1 </th>
-                    <td>@m.Nombre</td>
-                    <td>@m.Especie</td>
-                    <td>@m.Raza</td>
-                    <td>@m.Edad</td>
+                        <th scope="row">@(Model.i = Model.i+1)</th>
+                        <td>@v.Nombre</td>
+                        <td>@v.Edad</td>
+                        <td>@v.Correo</td>
+                        <td>@v.Telefono</td>
 
-                    <td>
-                    <button class="btn btn-danger">
-                    <i class="far fa-trash-alt"></i>
-                    </button>
-                    <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
-                    <i class="far fa-eye"></i>
-                    </button>
-                    <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal">
-                    <i class="far fa-edit"></i>
-                    </button>
-                    </td>
-                    </tr>
-
-                *@
-                @* } *@
-
-                @for (int i = 0; i < 2; i++)
-                {
-                    @* <tr>
-                        <th scope="row">1 </th>
-                        <td>vet @i</td>
-                        <td>bb</td>
-                        <td>ccc</td>
-                        <td>ddd</td>
-                        <td>eee</td>
-                        <td>fff</td>
-
-
-                        <td>
-                            <button class="btn btn-danger">
-                                <i class="far fa-trash-alt"></i>
-                            </button>
+                        <td style="display:flex;">
+                            <div style="width:50px;">
+                                <form method="Post">
+                                    <button class="btn btn-danger" asp-page-handler="Del" asp-route-IdVeterinario="@v.Id"
+                                    type="submit">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                            </div>
                             <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
                                 <i class="far fa-eye"></i>
                             </button>
-                            <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal">
+                            <a class="btn btn-warning" asp-page="/Veterinario/Veterinario" asp-route-IdVeterinario="@v.Id">
                                 <i class="far fa-edit"></i>
-                            </button>
+                            </a>
                         </td>
                     </tr>
- *@
+
 
                 }
+
 
 
 
@@ -162,55 +141,46 @@
                 <div class="modal-body">
                     @* form agregar Veterinario *@
                     <div>
-                        <form>
+                        <form method="post">
                             <div class="form-group">
                                 <label for="NombreVeterinario">Nombres</label>
-                                <input type="text" class="form-control" id="NombreVeterinario"
+                                <input type="text" class="form-control" id="NombreVeterinario" name="Nombre"
                                     placeholder="Ingrese su nombre">
                             </div>
-                            <div class="form-group">
-                                <label for="ApellidoVeterinario">Apellidos</label>
-                                <input type="text" class="form-control" id="ApellidoVeterinario"
-                                    placeholder="Ingrese su apellido">
-                            </div>
+                          
                             <div class="form-group">
                                 <label for="EdadVeterinario">Edad</label>
-                                <input type="number" class="form-control" id="EdadVeterinario"
+                                <input type="number" class="form-control" id="EdadVeterinario" name="Edad"
                                     placeholder="Ingrese su edad">
                             </div>
-                            <div class="form-group">
-                                <label for="GeneroVeterinario">Genero</label>
-                                <input type="text" class="form-control" id="GeneroVeterinario"
-                                    placeholder="Ingrese su Genero">
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="EmailVeterinario">e-mail</label>
-                                <input type="email" class="form-control" id="EmailVeterinario"
+                                <input type="email" class="form-control" id="EmailVeterinario" name="Correo"
                                     placeholder="Ingrese su e-mail">
                             </div>
                             <div class="form-group">
                                 <label for="TelefonoVeterinario">Teléfono</label>
-                                <input type="number" class="form-control" id="TelefonoVeterinario"
+                                <input type="number" class="form-control" id="TelefonoVeterinario" name="Telefono"
                                     placeholder="Ingrese su Teléfono">
                             </div>
                             <div class="form-group">
                                 <label for="EspecializacionVeterinario">Especialización</label>
-                                <input type="text" class="form-control" id="EspecializacionVeterinario"
+                                <input type="text" class="form-control" id="EspecializacionVeterinario" name=""
                                     placeholder="Ingrese su Especialización">
                             </div>
                             <div class="form-group">
                                 <label for="TarjetaVeterinario">Tarjeta Profesional</label>
-                                <input type="text" class="form-control" id="TarjetaVeterinario"
+                                <input type="text" class="form-control" id="TarjetaVeterinario" name="TarjetaProfecional"
                                     placeholder="Ingrese su Tarjeta Profesional">
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" asp-page-handler="Add">Guardar</button>
+                            </div>
 
-                            <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Guardar</button>
                 </div>
             </div>
         </div>
@@ -234,58 +204,57 @@
                 </div>
                 <div class="modal-body">
                     @* form Edit Veterinario *@
-                    @* form agregar Veterinario *@
+                   
                     <div>
-                        <form>
+                        <form method="post">
                             <div class="form-group">
+                                <input asp-for="@Model.veterinarioDeEdicion.Id" type="hidden" class="form-control" id="Nombre" placeholder="name" name="Id">
+
                                 <label for="NombreVeterinario">Nombres</label>
-                                <input type="text" class="form-control" id="NombreVeterinario"
+                                <input asp-for="@Model.veterinarioDeEdicion.Nombre" type="text" class="form-control" id="NombreVeterinario" name="Nombre"
                                     placeholder="Ingrese su nombre">
                             </div>
-                            <div class="form-group">
-                                <label for="ApellidoVeterinario">Apellidos</label>
-                                <input type="text" class="form-control" id="ApellidoVeterinario"
-                                    placeholder="Ingrese su apellido">
-                            </div>
+                           
                             <div class="form-group">
                                 <label for="EdadVeterinario">Edad</label>
-                                <input type="number" class="form-control" id="EdadVeterinario"
+                                <input asp-for="@Model.veterinarioDeEdicion.Edad" type="number" class="form-control" id="EdadVeterinario" name="Edad"
                                     placeholder="Ingrese su edad">
                             </div>
-                            <div class="form-group">
-                                <label for="GeneroVeterinario">Genero</label>
-                                <input type="text" class="form-control" id="GeneroVeterinario"
-                                    placeholder="Ingrese su Genero">
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="EmailVeterinario">e-mail</label>
-                                <input type="email" class="form-control" id="EmailVeterinario"
+                                <input asp-for="@Model.veterinarioDeEdicion.Correo" type="email" class="form-control" id="EmailVeterinario" name="Correo"
                                     placeholder="Ingrese su e-mail">
                             </div>
                             <div class="form-group">
                                 <label for="TelefonoVeterinario">Teléfono</label>
-                                <input type="number" class="form-control" id="TelefonoVeterinario"
+                                <input asp-for="@Model.veterinarioDeEdicion.Telefono" type="number" class="form-control" id="TelefonoVeterinario" name="Telefono"
                                     placeholder="Ingrese su Teléfono">
                             </div>
                             <div class="form-group">
                                 <label for="EspecializacionVeterinario">Especialización</label>
-                                <input type="text" class="form-control" id="EspecializacionVeterinario"
+                                <input asp-for="@Model.veterinarioDeEdicion.Especializacion" type="text" class="form-control" id="EspecializacionVeterinario" name="Especializacion"
                                     placeholder="Ingrese su Especialización">
                             </div>
                             <div class="form-group">
                                 <label for="TarjetaVeterinario">Tarjeta Profesional</label>
-                                <input type="text" class="form-control" id="TarjetaVeterinario"
+                                <input asp-for="@Model.veterinarioDeEdicion.TarjetaProfecional" type="text" class="form-control" id="TarjetaVeterinario" name="TarjetaProfecional"
                                     placeholder="Ingrese su Tarjeta Profesional">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <div class="modal-footer">
+                                @if (Model.modoEdicion == "edicion")
+                            {
+                                <button class="btn btn-primary" asp-page-handler="Edit">Guardar</button>
+
+                            }
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+
+                            </div>
                         </form>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Guardar</button>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -331,17 +300,17 @@
 @* lista de pruba *@
 
 @* <h1>lista de prueba</h1>
-<table>
+    <table>
     @foreach (var v in Model.Veterinarios)
     {
-        <tr>
-            <td>
-                @v.Nombre
-            </td>
-        </tr>
-        
+    <tr>
+    <td>
+    @v.Nombre
+    </td>
+    </tr>
+
     }
-</table> *@
+    </table> *@
 
 
 <!-- Font awesome -->
@@ -354,79 +323,94 @@
 
 </div>
 
+
+
+    @if (Model.modoEdicion == "edicion")
+    {
+        <script>
+            
+            
+            $(document).ready(function () {
+                $('#EditModal').modal('toggle')
+            });
+        </script>
+
+    }
+
 <script>
-    document.querySelector("#res").addEventListener(actualizarLista());
-    function actualizarLista(){
+
+    @* document.querySelector("#res").addEventListener(actualizarLista());
+        function actualizarLista(){
         //alert("hi");
         let xhttp = new XMLHttpRequest();
-        
+
         xhttp.onreadystatechange = function (){
-            if(this.readyState == 4 && this.status == 200){
-                //alert(xhttp.responseText + " conexion exitosa");
-                let datos = JSON.parse(this.responseText);
+        if(this.readyState == 4 && this.status == 200){
+        //alert(xhttp.responseText + " conexion exitosa");
+        let datos = JSON.parse(this.responseText);
 
-                let res = document.querySelector('#res');
-                res.innerHTML = '';
-                var i = 1;
-                for(let item of datos){
-                    console.log(item);
-                    //alert(item);
-                    res.innerHTML += `
-                    <tr>
-                        <th scope="row">${i++}  </th>
-                        <td> ${item.nombre} </td>
-                        <td>${item.edad}</td>
-                        <td>${item.correo}</td>
-                        <td>${item.telefono}</td>
+        let res = document.querySelector('#res');
+        res.innerHTML = '';
+        var i = 1;
+        for(let item of datos){
+        console.log(item);
+        //alert(item);
+        res.innerHTML += `
+        <tr>
+        <th scope="row">${i++}  </th>
+        <td> ${item.nombre} </td>
+        <td>${item.edad}</td>
+        <td>${item.correo}</td>
+        <td>${item.telefono}</td>
 
 
-                        <td>
-                            <button class="btn btn-danger">
-                                <i class="far fa-trash-alt"></i>
-                            </button>
-                            <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
-                                <i class="far fa-eye"></i>
-                            </button>
-                            <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal">
-                                <i class="far fa-edit"></i>
-                            </button>
-                        </td>
-                    </tr>
+        <td>
+        <button class="btn btn-danger">
+        <i class="far fa-trash-alt"></i>
+        </button>
+        <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
+        <i class="far fa-eye"></i>
+        </button>
+        <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal">
+        <i class="far fa-edit"></i>
+        </button>
+        </td>
+        </tr>
 
-                    `
-                
-                }
-            }
-            
-            
+        `
+
+        }
+        }
+
+
         }
 
         xhttp.open("GET","https://localhost:5005/WeatherForecast",true);
         xhttp.send();
-
-        @* var listaV
+    *@
+    @* var listaV
         $.ajax({
-            type:"GET",
-            url:"https://localhost:5005/WeatherForecast",
-            data:'text',
-            success: function(datos){
-                //alert(datos);
-                listaV = datos;                
-                document.getElementById("listaV").innerHTML = listaV;
-                let ListaV2 = JSON.parse(datos); 
-                console.log(ListaV2);
-                alert(ListaV2);
+        type:"GET",
+        url:"https://localhost:5005/WeatherForecast",
+        data:'text',
+        success: function(datos){
+        //alert(datos);
+        listaV = datos;
+        document.getElementById("listaV").innerHTML = listaV;
+        let ListaV2 = JSON.parse(datos);
+        console.log(ListaV2);
+        alert(ListaV2);
 
-                for (let item of datos){
-                    console.log(item.id);
-                }
-                
-            },
-            dataType:'text'
+        for (let item of datos){
+        console.log(item.id);
+        }
+
+        },
+        dataType:'text'
         }); *@
 
         //document.getElementById("listaV").innerHTML = listaV.Nombre;
 
-        
+
     }
 </script>
