@@ -32,6 +32,8 @@ namespace Veterinaria.App.Persistencia{
 
                 mascotaEncontrado.Nombre  = MascotaNuevo.Nombre;                
                 mascotaEncontrado.Edad  = MascotaNuevo.Edad;
+                mascotaEncontrado.Especie  = MascotaNuevo.Especie;
+                mascotaEncontrado.Raza  = MascotaNuevo.Raza;
                 mascotaEncontrado.FechaRegistro  = MascotaNuevo.FechaRegistro;
                 this.appContext.SaveChanges();
                 Console.WriteLine("la mascota "+ MascotaNuevo.Nombre + " fue modificada");
@@ -65,7 +67,7 @@ namespace Veterinaria.App.Persistencia{
             
         }
         public IEnumerable<Mascota> GetMascota(){
-            return null;
+            return this.appContext.Mascotas;
 
         }
 

@@ -45,7 +45,7 @@ namespace Veterinaria.App.Consola
             //EditCuidador(8);
 
             /*Mascota*/
-            //addMascota();
+            addMascota();
             //eliminarMascota(1);
             //BuscarMascota(2);
             //EditMascota(2);
@@ -225,11 +225,11 @@ namespace Veterinaria.App.Consola
         {
             Mascota mascota =
                 new Mascota {
-                    Nombre = "Mich",
-                    Especie = "Gato",
+                    Nombre = "lila",
+                    Especie = "perro",
                     Raza =  "Felino",
-                    Edad = 22,
-                    FechaRegistro = new DateTime(2021, 09, 21),
+                    Edad = 5,
+                    FechaRegistro = new DateTime(2021, 10, 21),
                 };
 
             repositorioMascota.addMascota (mascota);

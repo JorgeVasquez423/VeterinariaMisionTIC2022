@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
 /*  */
-//using Veterinaria.App.Persistencia;
-//using Veterinaria.App.Dominio;
+using Veterinaria.App.Persistencia;
+using Veterinaria.App.Dominio;
 
 
 
@@ -16,6 +16,10 @@ namespace Veterinaria.App.Presentacion.Pages
 {
     public class VeterinarioModel : PageModel
     {
+
+        /* instacia de objeto veterinario */
+        private static IRepositorioVeterinario repositorioVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
+
         private readonly ILogger<VeterinarioModel> _logger;
 
         public VeterinarioModel(ILogger<VeterinarioModel> logger)
@@ -39,6 +43,8 @@ namespace Veterinaria.App.Presentacion.Pages
         public void OnGet()
         {
             //Veterinarios=repoVeterinarios.GetAll();
+
+            
         }
     }
 }
