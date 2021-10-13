@@ -58,15 +58,15 @@ namespace Veterinaria.App.Consola
         {
             Veterinario veterinario =
                 new Veterinario {
-                    Nombre = "Sandro Perez",
-                    Telefono = "31234562",
-                    Edad = 28,
+                    Nombre = "David Sanchez",
+                    Telefono = "963258741",
+                    Edad = 38,
                     Direccion = "cra 25 #13-15",
-                    Correo = "SandroPz@veterinario.com",
-                    Contraseña = " 12sdf2134",
+                    Correo = "DavSanchez@veterinario.com",
+                    Contraseña = " 6454654",
                     FechaRegistro = new DateTime(2021, 10, 8),
-                    Especializacion = "Perros",
-                    TarjetaProfecional = "12385216"
+                    Especializacion = "Anesteciología",
+                    TarjetaProfecional = "1616123"
                 };
 
             repositorioVeterinario.addVeterinario (veterinario);
