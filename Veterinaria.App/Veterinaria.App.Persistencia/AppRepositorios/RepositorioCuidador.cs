@@ -94,7 +94,7 @@ namespace Veterinaria.App.Persistencia
 
         public IEnumerable<Cuidador> GetCuidadores()
         {
-            return null;
+            return this.appContext.Cuidadores;
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿@page
-@model IndexModel
+@model Veterinaria.App.Presentacion.Pages.CuidadorModel
 @{
   ViewData["Title"] = "Gestión del Cuidador";
 }
@@ -33,7 +33,7 @@
 <div class="text-center">
   <h1 class="display-4">Gestión de la Cuidador</h1>
   @* <p>Grupo 28 - Equipo 1 ... Conoce más nuestro proyecto en <a
-      href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p> *@
+    href="https://github.com/JorgeVasquez423/VeterinariaMisionTIC2022">GitHub</a>.</p> *@
 </div>
 
 
@@ -61,10 +61,9 @@
         <tr class="bg-dark" style=" color:white">
           <th scope="col">#</th>
           <th scope="col">Nombre</th>
-          <th scope="col">Teléfono</th>
-          <th scope="col">Edad</th>
           <th scope="col">Dirección</th>
-          <th scope="col">Correo </th>
+          <th scope="col">Correo</th>
+          <th scope="col">Teléfono </th>
           <th scope="col">Opciones </th>
 
 
@@ -72,63 +71,37 @@
       </thead>
       <tbody>
 
-        @* @foreach (Mascotax m in Model.listaMascotas)
-          {
-
-
-          <tr>
-          <th scope="row">1 </th>
-          <td>@m.Nombre</td>
-          <td>@m.Especie</td>
-          <td>@m.Raza</td>
-          <td>@m.Edad</td>
-
-          <td>
-          <button class="btn btn-danger">
-          <i class="far fa-trash-alt"></i>
-          </button>
-          <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
-          <i class="far fa-eye"></i>
-          </button>
-          <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal">
-          <i class="far fa-edit"></i>
-          </button>
-          </td>
-          </tr>
-
-
-          }
-        *@
-        @for (int i = 0; i < 2; i++)
+        @foreach (var c in Model.listaCuidadores)
         {
+
+
           <tr>
-            <th scope="row">@(i+1) </th>
-            <td>qqq</td>
-            <td>www</td>
-            <td>ddd</td>
-            <td>asdf</td>
-            <td>aas</td>
+            <th scope="row">@c.Id </th>
+            <td>@c.Nombre</td>
+            <td>@c.Direccion</td>
+            <td>@c.Correo</td>
+            <td>@c.Telefono</td>
 
+            <td style="display:flex;">
+              <div style="width:50px;">
+                <form method="Post">
+                  <button class="btn btn-danger" asp-page-handler="Del" asp-route-IdCuidador="@c.Id" type="submit">
+                    <i class="far fa-trash-alt"></i>
+                  </button>
+                </form>
+              </div>
 
-            <td>
-              <button class="btn btn-danger">
-                <i class="far fa-trash-alt"></i>
-              </button>
               <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
                 <i class="far fa-eye"></i>
               </button>
-              <button class="btn btn-warning" data-toggle="modal" data-target="#EditModal">
+              <a class="btn btn-warning" asp-page="/Cuidador/Cuidador" asp-route-IdCuidador="@c.Id">
                 <i class="far fa-edit"></i>
-              </button>
+              </a>
             </td>
           </tr>
 
 
         }
-
-
-
-
       </tbody>
     </table>
   </div>
@@ -151,55 +124,54 @@
         <div class="modal-body">
           @* form agregar cuidador *@
           <div>
-            <form>
+            <form method="post">
               <div class="form-group">
                 <label for="id-nombre-cuidador">Nombre</label>
                 <input type="text" class="form-control" id="id-nombre-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí su nombre completo">
+                  name="Nombre" placeholder="Ingrese aquí su nombre completo">
                 <small id="id-nombre-cuidador-ayuda" class="form-text text-muted">Nombre y apellidos.</small>
               </div>
               <div class="form-group">
-                <label for="id-telefono-cuidador">Telefono</label>
+                <label for="id-telefono-cuidador">Teléfono</label>
                 <input type="tel" class="form-control" id="id-telefono-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí su número de telefono">
+                  name="Telefono" placeholder="Ingrese aquí su número de telefono">
                 <small id="id-telefono-cuidador-ayuda" class="form-text text-muted">Número de teléfono fijo o
                   celular.</small>
               </div>
               <div class="form-group">
                 <label for="id-edad-cuidador">Edad</label>
-                <input type="number" class="form-control" id="id-edad-cuidador" aria-describedby="emailHelp"
+                <input type="number" class="form-control" id="id-edad-cuidador" aria-describedby="emailHelp" name="Edad"
                   placeholder="Ingrese aquí su edad">
                 <small id="id-edad-cuidador-ayuda" class="form-text text-muted">Edad en años</small>
               </div>
               <div class="form-group">
                 <label for="id-direccion-cuidador">Dirección</label>
                 <input type="text" class="form-control" id="id-direccion-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí la dirección de residencia">
+                  name="Direccion" placeholder="Ingrese aquí la dirección de residencia">
                 <small id="id-direccion-cuidador-ayuda" class="form-text text-muted">Dirección completa</small>
               </div>
               <div class="form-group">
                 <label for="id-correo-cuidador">Correo electrónico</label>
                 <input type="email" class="form-control" id="id-correo-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí su correo electrónico">
+                  name="Correo" placeholder="Ingrese aquí su correo electrónico">
                 <small id="id-correo-cuidador-ayuda" class="form-text text-muted">Correo electrónico activo.</small>
               </div>
               @* <div class="form-group">
                 <label for="id-contrasena-cuidador">Contraseña</label>
                 <input type="password" class="form-control" id="id-contrasena-cuidador" placeholder="Contraseña">
-              </div> *@
-              <div class="form-check">
+                </div> *@
+              @* <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck">
                 <label class="form-check-label" for="exampleCheck">Acepto la <a asp-area="" asp-page="/Privacy">Política
-                    de
-                    privacidad</a>.</p></label>
+                de
+                privacidad</a>.</p></label>
+                </div> *@
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary" asp-page-handler="Add">Guardar</button>
               </div>
-              <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Guardar</button>
         </div>
       </div>
     </div>
@@ -224,56 +196,67 @@
         <div class="modal-body">
           @* form Edit Cuidador *@
           <div>
-            <form>
+            <form method="post">
+              <input asp-for="@Model.CuidadorDeEdicion.Id" type="hidden" class="form-control" id="Nombre"
+                placeholder="name" name="Id">
+
               <div class="form-group">
                 <label for="id-nombre-cuidador">Nombre</label>
-                <input type="text" class="form-control" id="id-nombre-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí su nombre completo">
+                <input asp-for="@Model.CuidadorDeEdicion.Nombre" type="text" class="form-control" id="id-nombre-cuidador"
+                  aria-describedby="emailHelp" name="Nombre" placeholder="Ingrese aquí su nombre completo">
                 <small id="id-nombre-cuidador-ayuda" class="form-text text-muted">Nombre y apellidos.</small>
               </div>
               <div class="form-group">
-                <label for="id-telefono-cuidador">Telefono</label>
-                <input type="tel" class="form-control" id="id-telefono-cuidador" aria-describedby="emailHelp"
+                <label for="id-telefono-cuidador">Teléfono</label>
+                <input asp-for="@Model.CuidadorDeEdicion.Telefono" type="tel" class="form-control"
+                  id="id-telefono-cuidador" aria-describedby="emailHelp" name="Telefono"
                   placeholder="Ingrese aquí su número de telefono">
                 <small id="id-telefono-cuidador-ayuda" class="form-text text-muted">Número de teléfono fijo o
                   celular.</small>
               </div>
               <div class="form-group">
                 <label for="id-edad-cuidador">Edad</label>
-                <input type="number" class="form-control" id="id-edad-cuidador" aria-describedby="emailHelp"
-                  placeholder="Ingrese aquí su edad">
+                <input asp-for="@Model.CuidadorDeEdicion.Edad" type="number" class="form-control" id="id-edad-cuidador"
+                  aria-describedby="emailHelp" name="Edad" placeholder="Ingrese aquí su edad">
                 <small id="id-edad-cuidador-ayuda" class="form-text text-muted">Edad en años</small>
               </div>
               <div class="form-group">
                 <label for="id-direccion-cuidador">Dirección</label>
-                <input type="text" class="form-control" id="id-direccion-cuidador" aria-describedby="emailHelp"
+                <input asp-for="@Model.CuidadorDeEdicion.Direccion" type="text" class="form-control"
+                  id="id-direccion-cuidador" aria-describedby="emailHelp" name="Direccion"
                   placeholder="Ingrese aquí la dirección de residencia">
                 <small id="id-direccion-cuidador-ayuda" class="form-text text-muted">Dirección completa</small>
               </div>
               <div class="form-group">
                 <label for="id-correo-cuidador">Correo electrónico</label>
-                <input type="email" class="form-control" id="id-correo-cuidador" aria-describedby="emailHelp"
+                <input asp-for="@Model.CuidadorDeEdicion.Correo" type="email" class="form-control"
+                  id="id-correo-cuidador" aria-describedby="emailHelp" name="Correo"
                   placeholder="Ingrese aquí su correo electrónico">
                 <small id="id-correo-cuidador-ayuda" class="form-text text-muted">Correo electrónico activo.</small>
               </div>
               @* <div class="form-group">
                 <label for="id-contrasena-cuidador">Contraseña</label>
                 <input type="password" class="form-control" id="id-contrasena-cuidador" placeholder="Contraseña">
-              </div> *@
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck">
+                </div> *@
+              @* <div class="form-check">
+                <input asp-for="@Model.CuidadorDeEdicion." type="checkbox" class="form-check-input" id="exampleCheck">
                 <label class="form-check-label" for="exampleCheck">Acepto la <a asp-area="" asp-page="/Privacy">Política
-                    de
-                    privacidad</a>.</p></label>
+                de
+                privacidad</a>.</p></label>
+                </div> *@
+              <div class="modal-footer">
+                @if (Model.modoEdicion == "edicion")
+                {
+                  <button class="btn btn-primary" asp-page-handler="Edit">Guardar</button>
+
+                }
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+
               </div>
-              <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Guardar</button>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -298,9 +281,8 @@
           @* vista Cuidador *@
           <div>
             <div>
-              <img
-                src="https://concepto.de/wp-content/uploads/2018/08/persona-e1533759204552.jpg"
-                alt="" width="250px" height="" style="margin-left: 20px;">
+              <img src="https://concepto.de/wp-content/uploads/2018/08/persona-e1533759204552.jpg" alt="" width="250px"
+                height="" style="margin-left: 20px;">
             </div>
             <h6>Nombre:</h6>
             <h6>descripción:</h6>
@@ -316,9 +298,12 @@
 
 </div>
 
+@if (Model.modoEdicion == "edicion")
+{
+    <script>
+        $(document).ready(function () {
+            $('#EditModal').modal('toggle')
+        });
+    </script>
 
-
-
-
-
-
+}
