@@ -212,3 +212,4 @@ D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\
 D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Citas\Citas.cshtml.g.cs
 D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\HistoriaClinica\HistoriaClinica.cshtml.g.cs
 D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Informes\Informes.cshtml.g.cs
+D:\todo\cursos virt\MINTIC\ciclo3\programacion\proyecto veterinaria\Veterinaria\Veterinaria.App\Veterinaria.App.Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Vacuna\Vacuna.cshtml.g.cs
