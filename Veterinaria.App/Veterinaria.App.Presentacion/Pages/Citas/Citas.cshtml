@@ -1,4 +1,264 @@
 ﻿@page
 @model Veterinaria.App.Presentacion.Page.CitasModel
 @{
+    ViewData["Title"] = "Gestión de Citas";
 }
+
+<style>
+    * {
+        margin: 0%;
+    }
+
+    .contenedor1 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+    }
+    .btn-add_mascota {
+        float: left;
+        padding-left: 15px;
+
+    }
+
+    .buscar_mascota {
+        float: right;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Gestión de la cita</h1>    
+</div>
+
+
+
+<div class="container contenedor1">
+    <!-- btn agregar -->
+    <div class="btn-add_cita">
+        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Nuevo</a>
+    </div>
+
+    <!-- buscar -->
+    <div class=" buscar_cita ">
+        <input type="text" class="form-control" placeholder="Buscar">
+        <i class="fas fa-search"></i>
+    </div>
+</div>
+
+<!-- tabla listar -->
+<div class="container ">
+
+    <div class="table-responsive  ">
+        <table class="table table-striped ">
+            <caption>Lista de citas</caption>
+            <thead>
+                <tr class="bg-dark" style=" color:white">
+                    <th scope="col">#</th>
+                    <th scope="col">nombre</th>
+                    <th scope="col">Especie cita</th>
+                    <th scope="col">Raza cita</th>
+                    <th scope="col">Edad cita</th>
+                    <th scope="col">Opciones </th>
+                </tr>
+            </thead>
+            <tbody>
+                @* le agregue la x por que no lo reconocia como tipo *@
+                @* @foreach (var m in Model.listacitas)
+                {
+
+
+                    <tr>
+                        <th scope="row">@m.Id </th>
+                        <td>@m.Nombre</td>
+                        <td>@m.Especie</td>
+                        <td>@m.Raza</td>
+                        <td>@m.Edad</td>
+
+                        <td style="display:flex;">
+                            <div style="width:50px;">
+                                <form method="Post">
+                                    <button class="btn btn-danger" asp-page-handler="Del" asp-route-Idcita="@m.Id"
+                                    type="submit">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <!--<form action="GET">-->
+                            <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
+                                <i class="far fa-eye"></i>
+                            </button>
+                            
+                            <a class="btn btn-warning" asp-page="/cita/cita" asp-route-Idcita="@m.Id">
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <!-- -->
+                            <!-- </form> -->
+                            
+
+
+                        </td>
+                    </tr>
+                } *@
+
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+@* modal add cita *@
+<div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Crear cita</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @* form agregar cita *@
+                    <div>
+                        <form method="POST">
+                            <div class="form-group">
+                                @* nombre cita *@
+                                <label for="add-cita">Nombre:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Nombre" name="Nombre">
+                                @* Especie cita *@
+                                <label for="add-cita">Especie:</label>
+                                <input type="text" class="form-control" id="Especie" placeholder="Especie"
+                                    name="Especie">
+                                @* Raza cita *@
+                                <label for="add-cita">Raza:</label>
+                                <input type="text" class="form-control" id="Raza" placeholder="Raza" name="Raza">
+                                @* Edad cita *@
+                                <label for="add-cita">Edad:</label>
+                                <input type="number" class="form-control" id="Edad" placeholder="Edad" name="Edad">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" asp-page-handler="Add">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@* modal Edit cita *@
+<div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="EditModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EditModalLabel">Editar cita</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @* form Edit cita *@
+                    <div>
+                        <form method="Post">
+                            <div class="form-group">
+                                <input @* asp-for="@Model.citaDeEdicion.Id" *@ type="hidden" class="form-control" id="Nombre" placeholder="name" name="Id">
+                                @* nombre cita *@
+                                <label for="add-cita">Nombre:</label>
+                                <input @* asp-for="@Model.citaDeEdicion.Nombre" *@ type="text" class="form-control" name="Nombre" id="name" placeholder="Nombre">
+                                @* Especie cita *@                                
+                                <label for="add-cita">Especie:</label>
+                                <input @* asp-for="@Model.citaDeEdicion.Especie" *@ type="text" class="form-control" name="Especie" id="Especie" placeholder="Especie">
+                                @* Raza cita *@
+                                <label for="add-cita">Raza:</label>
+                                <input @* asp-for="@Model.citaDeEdicion.Raza" *@ type="text" class="form-control" id="Raza" name="Raza" placeholder="Raza">
+                                @* Edad cita *@
+                                <label for="add-cita">Edad:</label>
+                                <input @* asp-for="@Model.citaDeEdicion.Edad" *@ type="number" class="form-control" name="Edad" id="Edad" placeholder="Edad">
+                            </div>
+                            <div class="modal-footer">
+                               @*  @if (Model.modoEdicion == "edicion")
+                            {
+                                <button class="btn btn-primary" asp-page-handler="Edit">Guardar</button>
+
+                            }
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                *@
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@* modal view <o> cita *@
+<div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="ViewModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EditModalLabel">Vista cita</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @* vista cita *@
+                    <div>
+                        <div>
+                            <img src="https://s1.eestatic.com/2020/08/26/curiosidades/citas/citas-perros-gatos_515959375_158488465_1706x960.jpg"
+                                alt="" width="100px" height="">
+                        </div>
+                        <h6>Nombre:</h6>
+                        <h6>descripción:</h6>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<!-- Font awesome -->
+<script src="https://kit.fontawesome.com/5f9c3bf3c5.js" crossorigin="anonymous"></script>
+
+@* @if (Model.modoEdicion == "edicion")
+{
+    <script>
+        $(document).ready(function () {
+            $('#EditModal').modal('toggle')
+        });
+    </script>
+
+} *@
