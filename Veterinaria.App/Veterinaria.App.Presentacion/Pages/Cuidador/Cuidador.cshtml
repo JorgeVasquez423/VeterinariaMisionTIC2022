@@ -99,7 +99,7 @@
                 </button> *@
               <a class="btn btn-success" asp-page="/Cuidador/Cuidador" asp-page-handler="CuidadorConMascotas"
               asp-route-IdCuidador="@c.Id">
-                <i class="far fa-edit"></i>
+                <i class="far fa-eye"></i>
               </a>
               <a class="btn btn-warning" asp-page="/Cuidador/Cuidador" asp-route-IdCuidador="@c.Id">
                 <i class="far fa-edit"></i>
@@ -288,22 +288,41 @@
         <div class="modal-body">
           @* vista Cuidador *@
           <div>
-            <div>
+            @* <div>
               <img src="https://concepto.de/wp-content/uploads/2018/08/persona-e1533759204552.jpg" alt="" width="250px"
                 height="" style="margin-left: 20px;">
-            </div>
+            </div> *@
 
-            @if (Model.bandera == 1)
-            {
+            
 
-              @if (Model.CuidadorConMascotas.Mascotas != null)
-              {
-                foreach (var m in Model.CuidadorConMascotas.Mascotas)
+
+            <div class="card" style="width: 26rem;">
+              <img class="card-img-top" src="https://concepto.de/wp-content/uploads/2018/08/persona-e1533759204552.jpg"
+                alt="Card image cap">
+              <div class="card-body">
+                
+
+                @if (Model.bandera == 1)
                 {
-                  <label for="">@m.Nombre</label>
-                  <label for="">@m.Edad</label>
-                  <label for="">@m.Raza</label>
-                  <label for="">@m.Especie</label>
+
+                  @if (Model.CuidadorConMascotas.Mascotas != null)
+                  {
+
+                    i = 0;
+                    <h5  class="card-title">@Model.CuidadorConMascotas.Nombre</h5>
+
+                    foreach (var m in Model.CuidadorConMascotas.Mascotas)
+                    {
+                      <div >
+                        <h6>
+                          Mascota @(i=i+1)
+                        </h6>
+                        <p>Nombre: @m.Nombre</p>
+                        <p>Edad: @m.Edad</p>
+                        <p>Especie @m.Especie</p><hr>
+                        
+                      </div>
+
 
 
                 }
@@ -311,9 +330,13 @@
               }
 
             }
+                
+                
+                @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+              </div>
+            </div>
 
-            <h6>Nombre:</h6>
-            <h6>descripción:</h6>
+            
           </div>
         </div>
         <div class="modal-footer">
@@ -327,23 +350,23 @@
 </div>
 
 @* @if (Model.bandera == 1)
-{
+  {
 
   @if (Model.CuidadorConMascotas.Mascotas != null)
   {
-    foreach (var m in Model.CuidadorConMascotas.Mascotas)
-    {
-      <label for="">@m.Nombre</label>
-      <label for="">@m.Edad</label>
-      <label for="">@m.Raza</label>
-      <label for="">@m.Especie</label>
+  foreach (var m in Model.CuidadorConMascotas.Mascotas)
+  {
+  <label for="">@m.Nombre</label>
+  <label for="">@m.Edad</label>
+  <label for="">@m.Raza</label>
+  <label for="">@m.Especie</label>
 
-
-    }
 
   }
 
-} *@
+  }
+
+  } *@
 
 
 
@@ -378,4 +401,3 @@
   </script>
 
 }
-
