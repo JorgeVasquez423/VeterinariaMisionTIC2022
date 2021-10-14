@@ -11,6 +11,8 @@ namespace  Veterinaria.App.Dominio
 
         public int Edad {get;set;}
         public DateTime FechaRegistro {get;set;}
+
+        public Cuidador Cuidador {get;set;}
         
     }
     

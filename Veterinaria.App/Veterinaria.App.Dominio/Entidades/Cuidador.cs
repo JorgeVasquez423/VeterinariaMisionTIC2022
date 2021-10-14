@@ -1,9 +1,14 @@
 using System;
+using System.Collections.Generic;
 
 namespace Veterinaria.App.Dominio
 {
     public class Cuidador : Persona
     {
         public String DireccionTrabajo { get; set; }
-    } //Fin class
-} //Fin namesapace
+
+        public List<Mascota> Mascotas {get; set;}
+        
+
+    } 
+} 

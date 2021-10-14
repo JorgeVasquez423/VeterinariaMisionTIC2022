@@ -1,6 +1,8 @@
 ﻿using System;
 using Veterinaria.App.Dominio;
 using Veterinaria.App.Persistencia;
+using System.Collections.Generic;
+
 
 namespace Veterinaria.App.Consola
 {
@@ -45,7 +47,8 @@ namespace Veterinaria.App.Consola
             //EditCuidador(8);
 
             /*Mascota*/
-            addMascota();
+            //addMascota();
+            CuidadorConMascotas(1024);
             //eliminarMascota(1);
             //BuscarMascota(2);
             //EditMascota(2);
@@ -217,8 +220,23 @@ namespace Veterinaria.App.Consola
             repositorioCuidador.editCuidador(cuidador);
         }
 
+        private static void CuidadorConMascotas(int idCuidador){
+
+            var c = repositorioCuidador.GetCuidadorConMascotas(idCuidador);
+            Console.WriteLine(c.Mascotas[0].Nombre);
+
+             foreach (var m in c.Mascotas){
+
+                Console.WriteLine(m.Nombre);
+
+            } 
+
+
+
+        }
+
         /*--------------------------------*/
-        /* CRUD Cuidador*/
+        /* CRUD Mascotas*/
         /*--------------------------------*/
 
         private static void addMascota()

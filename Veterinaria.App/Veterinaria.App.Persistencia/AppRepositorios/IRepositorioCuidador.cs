@@ -12,6 +12,7 @@ namespace Veterinaria.App.Persistencia{
         void eliminarCuidador(int idCuidador);
         Cuidador GetCuidador(int idCuidador);
         IEnumerable<Cuidador> GetCuidadores();
+        Cuidador GetCuidadorConMascotas(int idCuidador);
 
     }
 }

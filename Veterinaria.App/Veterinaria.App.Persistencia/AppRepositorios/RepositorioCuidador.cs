@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Veterinaria.App.Dominio;
+using Microsoft.EntityFrameworkCore;
 
 namespace Veterinaria.App.Persistencia
 {
@@ -43,6 +44,8 @@ namespace Veterinaria.App.Persistencia
                     cuidadorNuevo.FechaRegistro;
                 cuidadorEncontrado.DireccionTrabajo =
                     cuidadorNuevo.DireccionTrabajo;
+
+                //cuidadorEncontrado.
                 this.appContext.SaveChanges();
             }
 
@@ -96,5 +99,11 @@ namespace Veterinaria.App.Persistencia
         {
             return this.appContext.Cuidadores;
         }
+
+        public Cuidador GetCuidadorConMascotas(int idCuidador){
+            return this.appContext.Cuidadores.Include("Mascotas").FirstOrDefault(v => v.Id == idCuidador);
+        }
+
+
     }
 }

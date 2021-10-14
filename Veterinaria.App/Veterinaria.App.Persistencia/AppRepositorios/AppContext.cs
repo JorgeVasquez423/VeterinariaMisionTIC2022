@@ -30,15 +30,17 @@ namespace Veterinaria.App.Persistencia
 
 
 
-        protected override void OnConfiguring(
-            DbContextOptionsBuilder optionsBuilder
-        )
+        protected override void OnConfiguring( DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder
                     .UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = VeterinariaEquipo1");
             }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder){
+            modelBuilder.Entity<Mascota>().HasOne(c => c.Cuidador).WithMany(m => m.Mascotas).IsRequired();
         }
     }
 }

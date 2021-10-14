@@ -16,10 +16,17 @@ namespace Veterinaria.App.Presentacion.Pages
         /*  */
         private static IRepositorioCuidador repositorioCuidador = new RepositorioCuidador(new Persistencia.AppContext());
 
+        //private static RepositorioCuidador repositorioCuidador2 = new RepositorioCuidador(new Persistencia.AppContext());
+
+
         public IEnumerable<Cuidador> listaCuidadores = new List<Cuidador>();
         
         public Cuidador CuidadorDeEdicion;
+        public Cuidador CuidadorConMascotas;
+
         public String modoEdicion = "adicion";
+
+        public String x = "";
 
 
         /*  */
@@ -66,6 +73,36 @@ namespace Veterinaria.App.Presentacion.Pages
 
             //
             this.listaCuidadores = repositorioCuidador.GetCuidadores();
+        }
+
+        /*  */
+        public int bandera = 0;
+        public void OnGetCuidadorConMascotas(int idCuidador)
+        {
+            //idCuidador =1;
+            //var x = 1024;
+
+            if (idCuidador > 0)
+            {
+                bandera = 1;
+                this.CuidadorConMascotas = repositorioCuidador.GetCuidadorConMascotas(idCuidador);     
+                //this.modoEdicion = "edicion";
+                //Console.WriteLine(CuidadorDeEdicion.Mascotas[0].Nombre);
+
+                foreach (var m in this.CuidadorConMascotas.Mascotas){
+
+                Console.WriteLine(m.Nombre);
+                x = m.Nombre;
+
+            } 
+                                    
+            }else
+            {
+                //this.modoEdicion ="adicion";
+            }
+            this.listaCuidadores = repositorioCuidador.GetCuidadores();
+            
+            
         }
     }
 }

@@ -70,13 +70,16 @@
         </tr>
       </thead>
       <tbody>
+        @{
+          var i = 0;
+        }
 
         @foreach (var c in Model.listaCuidadores)
         {
 
 
           <tr>
-            <th scope="row">@c.Id </th>
+            <th scope="row">@(i=i+1)</th>
             <td>@c.Nombre</td>
             <td>@c.Direccion</td>
             <td>@c.Correo</td>
@@ -91,9 +94,13 @@
                 </form>
               </div>
 
-              <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
+              @* <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
                 <i class="far fa-eye"></i>
-              </button>
+                </button> *@
+              <a class="btn btn-success" asp-page="/Cuidador/Cuidador" asp-page-handler="CuidadorConMascotas"
+              asp-route-IdCuidador="@c.Id">
+                <i class="far fa-edit"></i>
+              </a>
               <a class="btn btn-warning" asp-page="/Cuidador/Cuidador" asp-route-IdCuidador="@c.Id">
                 <i class="far fa-edit"></i>
               </a>
@@ -202,8 +209,9 @@
 
               <div class="form-group">
                 <label for="id-nombre-cuidador">Nombre</label>
-                <input asp-for="@Model.CuidadorDeEdicion.Nombre" type="text" class="form-control" id="id-nombre-cuidador"
-                  aria-describedby="emailHelp" name="Nombre" placeholder="Ingrese aquí su nombre completo">
+                <input asp-for="@Model.CuidadorDeEdicion.Nombre" type="text" class="form-control"
+                  id="id-nombre-cuidador" aria-describedby="emailHelp" name="Nombre"
+                  placeholder="Ingrese aquí su nombre completo">
                 <small id="id-nombre-cuidador-ayuda" class="form-text text-muted">Nombre y apellidos.</small>
               </div>
               <div class="form-group">
@@ -256,7 +264,7 @@
             </form>
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -284,6 +292,26 @@
               <img src="https://concepto.de/wp-content/uploads/2018/08/persona-e1533759204552.jpg" alt="" width="250px"
                 height="" style="margin-left: 20px;">
             </div>
+
+            @if (Model.bandera == 1)
+            {
+
+              @if (Model.CuidadorConMascotas.Mascotas != null)
+              {
+                foreach (var m in Model.CuidadorConMascotas.Mascotas)
+                {
+                  <label for="">@m.Nombre</label>
+                  <label for="">@m.Edad</label>
+                  <label for="">@m.Raza</label>
+                  <label for="">@m.Especie</label>
+
+
+                }
+
+              }
+
+            }
+
             <h6>Nombre:</h6>
             <h6>descripción:</h6>
           </div>
@@ -298,12 +326,56 @@
 
 </div>
 
+@* @if (Model.bandera == 1)
+{
+
+  @if (Model.CuidadorConMascotas.Mascotas != null)
+  {
+    foreach (var m in Model.CuidadorConMascotas.Mascotas)
+    {
+      <label for="">@m.Nombre</label>
+      <label for="">@m.Edad</label>
+      <label for="">@m.Raza</label>
+      <label for="">@m.Especie</label>
+
+
+    }
+
+  }
+
+} *@
+
+
+
+@* @Model.x *@
+
+@* @foreach (var m in Model.CuidadorConMascotas.Mascotas){
+
+  //Console.WriteLine(m.Nombre);
+  @m.Nombre;
+  <label for="">@m.Nombre</label>
+  @Model.x
+
+
+  } *@
+
 @if (Model.modoEdicion == "edicion")
 {
-    <script>
-        $(document).ready(function () {
-            $('#EditModal').modal('toggle')
-        });
-    </script>
+  <script>
+    $(document).ready(function () {
+      $('#EditModal').modal('toggle')
+    });
+  </script>
 
 }
+
+@if (Model.bandera == 1)
+{
+  <script>
+    $(document).ready(function () {
+      $('#ViewModal').modal('toggle')
+    });
+  </script>
+
+}
+
