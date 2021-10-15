@@ -28,6 +28,8 @@ namespace Veterinaria.App.Presentacion.Pages
         public Mascota mascotaDeEdicion;
         public String modoEdicion = "adicion";
 
+        public Mascota mascotaConCitas;
+
         /*------  */
         private readonly ILogger<MascotaModel> _logger;
 
@@ -74,6 +76,27 @@ namespace Veterinaria.App.Presentacion.Pages
 
             //
             this.listaMascotas = repositorioMascota.GetMascota();
+        }
+
+        public int bandera = 0;
+         public void OnGetMascotaConCitas(int idMascota)
+        {
+            
+
+            if (idMascota > 0)
+            {
+                bandera = 1;
+                this.mascotaConCitas = repositorioMascota.GetMascotaConCitas(idMascota);
+                
+            }
+            else
+            {
+                //this.modoEdicion ="adicion";
+            }
+            this.listaMascotas = repositorioMascota.GetMascota();
+
+
+
         }
 
         

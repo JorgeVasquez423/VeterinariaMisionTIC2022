@@ -4,20 +4,35 @@
     ViewData["Title"] = "Gestión de Citas";
 }
 
+@* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+*@
+
+
+
 <style>
     * {
         margin: 0%;
     }
 
     .contenedor1 {
+        width: 80%;
         display: flex;
         justify-content: space-between;
         margin-bottom: 10px;
 
     }
+
     .btn-add_mascota {
         float: left;
         padding-left: 15px;
+        border: 1px solid gray;
+
 
     }
 
@@ -27,21 +42,25 @@
         justify-content: flex-start;
         align-items: center;
     }
-
-    
+    .add-cita{
+        padding: 30px;
+        width: 70%;
+        border: 2px solid black;
+        border-radius: 15px 50px 30px; 
+    }
 </style>
 
 <div class="text-center">
-    <h1 class="display-4">Gestión de la cita</h1>    
+    <h1 class="display-4">Gestión de la cita</h1>
 </div>
 
 
 
 <div class="container contenedor1">
     <!-- btn agregar -->
-    <div class="btn-add_mascota">
-        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Nuevo</a>
-    </div>
+    @* <div class="btn-add_mascota">
+        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >Nuevo</a>
+    </div> *@
 
     <!-- buscar -->
     <div class=" buscar_mascota ">
@@ -54,112 +73,144 @@
 <div class="container ">
 
     <div class="table-responsive  ">
+        @if (Model.bandera == 1)
+        {
         <table class="table table-striped ">
             <caption>Lista de citas</caption>
             <thead>
                 <tr class="bg-dark" style=" color:white">
                     <th scope="col">#</th>
-                    <th scope="col">Nombre Cuidador</th>
-                    <th scope="col">Nombre Mascota</th>
-                    <th scope="col">Veterinario</th>
-                    <th scope="col">Fecha</th>
+                    <th scope="col">Fechas</th>
                     <th scope="col">Opciones</th>
 
-                    
+
                 </tr>
             </thead>
             <tbody>
-                @* le agregue la x por que no lo reconocia como tipo *@
-                @* @foreach (var m in Model.listacitas)
-                {
 
+                  @if (Model.mascotaConCitas.Citas != null)
+                  {
 
-                    <tr>
-                        <th scope="row">@m.Id </th>
-                        <td>@m.Nombre</td>
-                        <td>@m.Especie</td>
-                        <td>@m.Raza</td>
-                        <td>@m.Edad</td>
+                     var i = 0;
+                    <h5  class="card-title">Citas de la Mascota @Model.mascotaConCitas.Nombre</h5>
+
+                    foreach (var m in Model.mascotaConCitas.Citas)
+                    {
+                      
+                       <tr>
+                        <th scope="row"> @(i=i+1)</th>
+                        <td> @m.Fecha</td>
+
+                        
 
                         <td style="display:flex;">
                             <div style="width:50px;">
                                 <form method="Post">
-                                    <button class="btn btn-danger" asp-page-handler="Del" asp-route-Idcita="@m.Id"
+                                    <button class="btn btn-danger" asp-page-handler="Del" asp-route-Idcita=""
                                     type="submit">
                                         <i class="far fa-trash-alt"></i>
                                     </button>
                                 </form>
                             </div>
                             <!--<form action="GET">-->
-                            <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
+                        <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
                                 <i class="far fa-eye"></i>
                             </button>
-                            
-                            <a class="btn btn-warning" asp-page="/cita/cita" asp-route-Idcita="@m.Id">
+
+                            <a class="btn btn-warning" asp-page="/cita/cita" asp-route-Idcita="">
                                 <i class="far fa-edit"></i>
                             </a>
                             <!-- -->
                             <!-- </form> -->
-                            
 
 
-                        </td>
+
+                    </td>
                     </tr>
-                } *@
+
+
+
+                }
+
+              }
 
             </tbody>
         </table>
+            }
+
+                
     </div>
 
 
 </div>
 
-@* modal add cita *@
-<div>
+@*  add cita *@
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Crear cita</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    @* form agregar cita *@
-                    <div>
-                        <form method="POST">
-                            <div class="form-group">
-                                @* nombre cita *@
-                                <label for="add-cita">Nombre:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Nombre" name="Nombre">
-                                @* Especie cita *@
-                                <label for="add-cita">Especie:</label>
-                                <input type="text" class="form-control" id="Especie" placeholder="Especie"
-                                    name="Especie">
-                                @* Raza cita *@
-                                <label for="add-cita">Raza:</label>
-                                <input type="text" class="form-control" id="Raza" placeholder="Raza" name="Raza">
-                                @* Edad cita *@
-                                <label for="add-cita">Edad:</label>
-                                <input type="number" class="form-control" id="Edad" placeholder="Edad" name="Edad">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary" asp-page-handler="Add">Guardar</button>
-                            </div>
-                        </form>
+
+    @*  *@
+
+    @if(Model.bandera == 0){    
+
+        <div class="container add-cita">
+            <form method="POST">
+                <div class="form-group">
+                    @* Fecha para atención *@
+                    <div class="input-group-prepend">
+                        <h6><label for="add-cita">Fecha atención</label></h6>
+                        <input type="date" class="form-control" id="dateCita" placeholder="dateCita"
+                            name="Fecha">
                     </div>
+                    @* nombre Cuidador *@
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">                                        
+                            <option selected>Cuidador...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+
+
+                    @* nombre Mascota *@
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" @* asp-items="@(new SelectList(Model.listaMascotas,"Empid","Nombre"))" *@>
+                            <option value="" selected disabled>Mascota...</option>
+                            @foreach (var mascota in Model.listaMascotas)
+                            {
+                                <option selected disabled name="@mascota.Id" value="@mascota.Id" >@mascota.Id @mascota.Nombre</option>
+                            @* <input asp-for="@mascota.Id" type="hidden" class="form-control" id="Nombre" placeholder="name" name="Id"> *@
+
+
+                            }
+
+                            <input type="text" placeholder="Escriba id Mascota" name="Id">
+
+
+                        </select>
+                    </div>
+
                 </div>
+                <div class="modal-footer">
+                    @* <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button> *@
 
-            </div>
+                    <button type="submit" class="btn btn-primary" asp-page-handler="Add">Guardar</button>
+
+                </div>
+            </form>
         </div>
-    </div>
+    }
+    @*  *@
 
-</div>
+  
 
 @* modal Edit cita *@
 <div>
@@ -179,34 +230,39 @@
                     <div>
                         <form method="Post">
                             <div class="form-group">
-                                <input @* asp-for="@Model.citaDeEdicion.Id" *@ type="hidden" class="form-control" id="Nombre" placeholder="name" name="Id">
+                                <input @* asp-for="@Model.citaDeEdicion.Id" *@ type="hidden" class="form-control"
+                                    id="Nombre" placeholder="name" name="Id">
                                 @* nombre cita *@
                                 <label for="add-cita">Nombre:</label>
-                                <input @* asp-for="@Model.citaDeEdicion.Nombre" *@ type="text" class="form-control" name="Nombre" id="name" placeholder="Nombre">
-                                @* Especie cita *@                                
+                                <input @* asp-for="@Model.citaDeEdicion.Nombre" *@ type="text" class="form-control"
+                                    name="Nombre" id="name" placeholder="Nombre">
+                                @* Especie cita *@
                                 <label for="add-cita">Especie:</label>
-                                <input @* asp-for="@Model.citaDeEdicion.Especie" *@ type="text" class="form-control" name="Especie" id="Especie" placeholder="Especie">
+                                <input @* asp-for="@Model.citaDeEdicion.Especie" *@ type="text" class="form-control"
+                                    name="Especie" id="Especie" placeholder="Especie">
                                 @* Raza cita *@
                                 <label for="add-cita">Raza:</label>
-                                <input @* asp-for="@Model.citaDeEdicion.Raza" *@ type="text" class="form-control" id="Raza" name="Raza" placeholder="Raza">
+                                <input @* asp-for="@Model.citaDeEdicion.Raza" *@ type="text" class="form-control"
+                                    id="Raza" name="Raza" placeholder="Raza">
                                 @* Edad cita *@
                                 <label for="add-cita">Edad:</label>
-                                <input @* asp-for="@Model.citaDeEdicion.Edad" *@ type="number" class="form-control" name="Edad" id="Edad" placeholder="Edad">
+                                <input @* asp-for="@Model.citaDeEdicion.Edad" *@ type="number" class="form-control"
+                                    name="Edad" id="Edad" placeholder="Edad">
                             </div>
                             <div class="modal-footer">
-                               @*  @if (Model.modoEdicion == "edicion")
-                            {
-                                <button class="btn btn-primary" asp-page-handler="Edit">Guardar</button>
+                                @* @if (Model.modoEdicion == "edicion")
+                                    {
+                                    <button class="btn btn-primary" asp-page-handler="Edit">Guardar</button>
 
-                            }
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    }
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                 *@
                             </div>
                         </form>
 
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -252,15 +308,15 @@
 
 
 
-<!-- Font awesome -->
-<script src="https://kit.fontawesome.com/5f9c3bf3c5.js" crossorigin="anonymous"></script>
+
+
 
 @* @if (Model.modoEdicion == "edicion")
-{
+    {
     <script>
-        $(document).ready(function () {
-            $('#EditModal').modal('toggle')
-        });
+    $(document).ready(function () {
+    $('#EditModal').modal('toggle')
+    });
     </script>
 
-} *@
+    } *@

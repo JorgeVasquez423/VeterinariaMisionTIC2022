@@ -1,7 +1,11 @@
 using System;
+using System.Collections.Generic;
 using Veterinaria.App.Dominio;
 using System.Collections.Generic;//linkedList arrayList
 using System.Linq;
+
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Veterinaria.App.Persistencia{
 
@@ -69,6 +73,14 @@ namespace Veterinaria.App.Persistencia{
         public IEnumerable<Mascota> GetMascota(){
             return this.appContext.Mascotas;
 
+        }
+
+        public Mascota GetMascotaConCitas(int idMascota){
+            return this.appContext.Mascotas.Include("Citas").FirstOrDefault(c => c.Id == idMascota);
+        }
+
+        public IEnumerable<Mascota> GetMascotaConCitasAll(){
+            return this.appContext.Mascotas.Include("Citas");
         }
 
     }

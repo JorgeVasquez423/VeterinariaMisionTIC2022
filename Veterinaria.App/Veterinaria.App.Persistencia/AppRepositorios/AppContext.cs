@@ -39,8 +39,11 @@ namespace Veterinaria.App.Persistencia
             }
         }
 
+/* api fluent */
         protected override void OnModelCreating(ModelBuilder modelBuilder){
             modelBuilder.Entity<Mascota>().HasOne(c => c.Cuidador).WithMany(m => m.Mascotas).IsRequired();
+
+            modelBuilder.Entity<Cita>().HasOne(m => m.Mascota).WithMany(c => c.Citas).IsRequired();
         }
     }
 }

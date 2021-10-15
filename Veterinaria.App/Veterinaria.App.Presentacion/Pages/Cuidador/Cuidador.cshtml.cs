@@ -20,7 +20,7 @@ namespace Veterinaria.App.Presentacion.Pages
 
 
         public IEnumerable<Cuidador> listaCuidadores = new List<Cuidador>();
-        
+
         public Cuidador CuidadorDeEdicion;
         public Cuidador CuidadorConMascotas;
 
@@ -43,31 +43,35 @@ namespace Veterinaria.App.Presentacion.Pages
         {
             if (idCuidador > 0)
             {
-                this.CuidadorDeEdicion = repositorioCuidador.GetCuidador(idCuidador);     
+                this.CuidadorDeEdicion = repositorioCuidador.GetCuidador(idCuidador);
                 this.modoEdicion = "edicion";
-                                    
-            }else
-            {
-                this.modoEdicion ="adicion";
+
             }
-            
+            else
+            {
+                this.modoEdicion = "adicion";
+            }
+
             this.listaCuidadores = repositorioCuidador.GetCuidadores();
         }
-        public void OnPostAdd(Cuidador CuidadorNuevo){
-            repositorioCuidador.addCuidador (CuidadorNuevo);
+        public void OnPostAdd(Cuidador CuidadorNuevo)
+        {
+            repositorioCuidador.addCuidador(CuidadorNuevo);
 
             //
             this.listaCuidadores = repositorioCuidador.GetCuidadores();
         }
 
-        public void OnPostDel(int IdCuidador){
-            repositorioCuidador.eliminarCuidador (IdCuidador);
+        public void OnPostDel(int IdCuidador)
+        {
+            repositorioCuidador.eliminarCuidador(IdCuidador);
 
             //
             this.listaCuidadores = repositorioCuidador.GetCuidadores();
         }
 
-        public void OnPostEdit(Cuidador CuidadorNuevo){
+        public void OnPostEdit(Cuidador CuidadorNuevo)
+        {
             repositorioCuidador.editCuidador(CuidadorNuevo);
             //Console.WriteLine("nombre: " + CuidadorNuevo.Especie);
 
@@ -85,24 +89,25 @@ namespace Veterinaria.App.Presentacion.Pages
             if (idCuidador > 0)
             {
                 bandera = 1;
-                this.CuidadorConMascotas = repositorioCuidador.GetCuidadorConMascotas(idCuidador);     
+                this.CuidadorConMascotas = repositorioCuidador.GetCuidadorConMascotas(idCuidador);
                 //this.modoEdicion = "edicion";
                 //Console.WriteLine(CuidadorDeEdicion.Mascotas[0].Nombre);
 
-                foreach (var m in this.CuidadorConMascotas.Mascotas){
+                /* foreach (var m in this.CuidadorConMascotas.Mascotas){
 
                 Console.WriteLine(m.Nombre);
                 x = m.Nombre;
 
-            } 
-                                    
-            }else
+            }  */
+
+            }
+            else
             {
                 //this.modoEdicion ="adicion";
             }
             this.listaCuidadores = repositorioCuidador.GetCuidadores();
-            
-            
+
+
         }
     }
 }

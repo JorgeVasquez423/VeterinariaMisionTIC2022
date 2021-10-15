@@ -96,6 +96,10 @@
                                 <i class="far fa-edit"></i>
                             </a>
 
+                            <a class="btn btn-primary" asp-page="/Citas/Citas" asp-page-handler="MascotaConCitas" asp-route-IdMascota="@m.Id">
+                                <i class="fas fa-calendar-alt"></i>
+                            </a>
+
 
                         </td>
                     </tr>
@@ -143,6 +147,8 @@
                                 @* Edad mascota *@
                                 <label for="add-Mascota">Edad:</label>
                                 <input type="number" class="form-control" id="Edad" placeholder="Edad" name="Edad">
+                                <label for="add-Mascota">Id:</label>
+                                <input type="number" class="form-control" id="idcuidador" placeholder="Edad" name="Cuidador.Id">
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
