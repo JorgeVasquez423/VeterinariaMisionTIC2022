@@ -15,7 +15,9 @@ namespace Veterinaria.App.Persistencia{
         Mascota GetMascota(int mascota);
         IEnumerable<Mascota> GetMascota();
         Mascota GetMascotaConCitas(int idMascota);
+        Mascota GetMascotaConVacuna(int idMascota);
         IEnumerable<Mascota> GetMascotaConCitasAll();
+
 
         
 

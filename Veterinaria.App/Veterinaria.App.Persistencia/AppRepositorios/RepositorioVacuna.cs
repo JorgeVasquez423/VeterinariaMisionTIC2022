@@ -80,7 +80,7 @@ namespace Veterinaria.App.Persistencia
             }
         }
         public IEnumerable<Vacuna> GetVacuna(){
-            return null;
+            return this.appContext.Vacunas;
         }
 
         /*  */

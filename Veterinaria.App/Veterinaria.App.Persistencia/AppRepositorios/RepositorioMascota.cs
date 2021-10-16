@@ -83,6 +83,10 @@ namespace Veterinaria.App.Persistencia{
             return this.appContext.Mascotas.Include("Citas");
         }
 
+        public Mascota GetMascotaConVacuna(int idMascota){
+            return this.appContext.Mascotas.Include("Vacunas").FirstOrDefault(c => c.Id == idMascota);
+        }
+
     }
 
 

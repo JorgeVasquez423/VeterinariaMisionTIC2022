@@ -79,7 +79,7 @@ namespace Veterinaria.App.Presentacion.Pages
         }
 
         public int bandera = 0;
-         public void OnGetMascotaConCitas(int idMascota)
+        /*  public void OnGetMascotaConCitas(int idMascota)
         {
             
 
@@ -98,6 +98,27 @@ namespace Veterinaria.App.Presentacion.Pages
 
 
         }
+
+        public void OnGetMascotaConVacunas(int idMascota)
+        {
+            
+
+            if (idMascota > 0)
+            {
+                bandera = 1;
+                this.mascotaConCitas = repositorioMascota.GetMascotaConVacuna(idMascota);
+                
+            }
+            else
+            {
+                //this.modoEdicion ="adicion";
+            }
+            //this.listaMascotas = repositorioMascota.GetMascota();
+
+
+
+        }
+         */
 
         
     }
