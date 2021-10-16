@@ -2,3 +2,188 @@
 @model Veterinaria.App.Presentacion.Page.InformesModel
 @{
 }
+
+
+
+
+<style>
+    * {
+        margin: 0%;
+    }
+
+    .contenedor1 {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+    }
+
+    .btn-add_mascota {
+        float: left;
+        padding-left: 15px;
+        border: 1px solid gray;
+
+
+    }
+
+    .buscar_mascota {
+        float: right;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .add-cita {
+        padding: 30px;
+        width: 70%;
+        border: 2px solid black;
+        border-radius: 15px 50px 30px;
+        box-shadow: 5px 10px #888888;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Gestión de Informes</h1>
+    <h5 class="display-9">Sugerencias de cuidado</h5>
+</div>
+
+
+
+<div class="container contenedor1">
+    <!-- btn agregar -->
+    @* <div class="btn-add_mascota">
+        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >Nuevo</a>
+        </div> *@
+
+    <!-- buscar -->
+    <div class=" buscar_mascota " >
+        <input type="text" class="form-control" placeholder="Buscar">
+        <i class="fas fa-search"></i>
+    </div>
+</div>
+
+@* listar informes *@
+
+
+
+<!-- tabla listar -->
+<div class="container ">
+
+    <div class="table-responsive  ">
+        @if (Model.bandera == 0)
+        {
+            <table class="table table-striped ">
+                <caption>Lista de Informes</caption>
+                <thead>
+                    <tr class="bg-dark" style=" color:white">
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre Sugerencia</th>
+                        <th scope="col">descripción</th>
+                        <th scope="col">Opciones</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    @{
+                        var i = 0;
+                    }
+
+
+                    @foreach (var m in Model.listaSugerenciaCuidado)
+                    {
+
+
+                        <tr>
+                            <th scope="row">@(i=i+1)</th>
+                            <td>@m.Nombre</td>
+                            <td>@m.Descripcion</td>
+
+
+                            <td style="display:flex;">
+
+                                <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
+                                    <i class="far fa-eye"></i>
+                                </button>
+
+
+
+
+                            </td>
+                        </tr>
+
+
+                    }
+
+
+
+
+
+
+
+                </tbody>
+            </table>
+        }
+        else
+        if (Model.bandera == 1)
+        {
+            <div class="card" id="print">
+                <h5 class="card-header">Sugerencia para la Mascota @Model.mascotaConInforme.Nombre</h5>
+                <div class="card-body">
+                    @foreach (var item in Model.mascotaConInforme.SugerenciaCuidados)
+                    {
+                        <h5 class="card-title">@item.Nombre</h5>
+                        <p class="card-text">@item.Descripcion</p>
+
+
+                    }
+
+
+
+                </div>
+            </div>
+
+            <a class="btn btn-primary" href="#" id="a-print" onclick="imprimirPagina();" style="margin-top: 20px;">
+                imprimir</a>
+
+        }
+
+
+    </div>
+
+
+</div>
+
+
+
+
+    <script>
+        function imprimirPagina() {
+                    
+            $("#a-print").hide();
+            $(".buscar_mascota").hide();
+
+
+            window.print();
+            location.reload();
+        }
+
+    </script>
+
+
+
+
+
+
+@* @if (Model.modoEdicion == "edicion")
+    {
+    <script>
+    $(document).ready(function () {
+    $('#EditModal').modal('toggle')
+    });
+    </script>
+
+    } *@

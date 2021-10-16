@@ -16,11 +16,11 @@ namespace Veterinaria.App.Persistencia{
         IEnumerable<Mascota> GetMascota();
         Mascota GetMascotaConCitas(int idMascota);
         Mascota GetMascotaConVacuna(int idMascota);
+        Mascota GetMascotaConInforme(int idMascota);
         IEnumerable<Mascota> GetMascotaConCitasAll();
 
 
         
-
 
         
     }

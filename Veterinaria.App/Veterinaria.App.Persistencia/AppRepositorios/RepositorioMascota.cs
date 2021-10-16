@@ -87,7 +87,12 @@ namespace Veterinaria.App.Persistencia{
             return this.appContext.Mascotas.Include("Vacunas").FirstOrDefault(c => c.Id == idMascota);
         }
 
+        public Mascota GetMascotaConInforme(int idMascota){
+            return this.appContext.Mascotas.Include("SugerenciaCuidados").FirstOrDefault(c => c.Id == idMascota);
+        }
+
     }
 
 
 }
+/* Informes/Informes?IdMascota=35 */

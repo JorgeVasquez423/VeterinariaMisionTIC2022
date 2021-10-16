@@ -88,9 +88,12 @@
                                     </button>
                                 </form>
                             </div>
-                            <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
-                                <i class="far fa-eye"></i>
-                            </button>
+                            <div style="width:50px;">
+
+                                <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
                             
                             <a class="btn btn-warning" asp-page="/Mascota/Mascota" asp-route-IdMascota="@m.Id">
                                 <i class="far fa-edit"></i>
@@ -101,6 +104,14 @@
                             </a>
                             <a class="btn btn-info" asp-page="/Vacuna/Vacuna" asp-page-handler="MascotaConVacunas" asp-route-IdMascota="@m.Id">
                                 <i class="fas fa-syringe"></i>
+                            </a>
+
+                         
+
+
+                            <a class="btn btn-secondary" asp-page="/Informes/Informes" asp-page-handler="MascotaConInforme" asp-route-IdMascota="@m.Id">
+                                <i class="fas fa-sticky-note"></i>
+
                             </a>
 
 

@@ -87,7 +87,7 @@ namespace Veterinaria.App.Persistencia
 
         public IEnumerable<SugerenciaCuidado> GetSugerenciaCuidado()
         {
-            return null;
+            return this.appContext.SugerenciaCuidados;
         }
     }
 }
