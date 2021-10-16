@@ -183,11 +183,11 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Options</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01" @* asp-items="@(new SelectList(Model.listaMascotas,"Empid","Nombre"))" *@>
-                            <option value="" selected disabled>Mascota...</option>
+                        <select class="custom-select" id="inputGroupSelect01" name="Id" @* asp-items="@(new SelectList(Model.listaMascotas,"Empid","Nombre"))" *@>
+                            <option value="" selected >Mascota...</option>
                             @foreach (var mascota in Model.listaMascotas)
                             {
-                                <option selected disabled name="@mascota.Id" value="@mascota.Id" >@mascota.Id @mascota.Nombre</option>
+                                <option selected  value="@mascota.Id" >@mascota.Id @*  @mascota.Nombre *@</option>
                             @* <input asp-for="@mascota.Id" type="hidden" class="form-control" id="Nombre" placeholder="name" name="Id"> *@
 
 

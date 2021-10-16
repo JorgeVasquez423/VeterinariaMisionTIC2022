@@ -27,7 +27,7 @@ namespace  Veterinaria.App.Dominio
         public List<SugerenciaCuidado> SugerenciaCuidados {get; set;}
 
 
-        
+        public int CuidadorId {get;set;}
 
 
         

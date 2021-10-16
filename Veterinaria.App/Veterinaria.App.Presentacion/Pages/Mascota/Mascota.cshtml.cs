@@ -20,6 +20,8 @@ namespace Veterinaria.App.Presentacion.Pages
 
         /* instancia obj mascota */
         private static IRepositorioMascota repositorioMascota = new RepositorioMascota(new Persistencia.AppContext());
+        private static IRepositorioCuidador repositorioCuidador = new RepositorioCuidador(new Persistencia.AppContext());
+
 
         /* lista de mascotas */
         //public List<Mascotax> listaMascotas = new List<Mascotax>();
@@ -57,6 +59,9 @@ namespace Veterinaria.App.Presentacion.Pages
         }
 
         public void OnPostAdd(Mascota mascotaNuevo){
+
+            Cuidador cuidador = repositorioCuidador.GetCuidador(mascotaNuevo.CuidadorId);
+
             repositorioMascota.addMascota (mascotaNuevo);
 
             //
@@ -122,5 +127,22 @@ namespace Veterinaria.App.Presentacion.Pages
 
         
     }
+
+   /*  public class MascotaTemporal {
+        public int Id{get;set;}
+        public String Nombre {get;set;}
+        public String Especie {get;set;}
+        public String Raza {get;set;}
+
+        public int Edad {get;set;}
+        public DateTime FechaRegistro {get;set;}
+
+
+        public int CuidadorId {get;set;}
+        
+        public String NombreCuidador{get;set;}
+
+
+    } */
 
 }
