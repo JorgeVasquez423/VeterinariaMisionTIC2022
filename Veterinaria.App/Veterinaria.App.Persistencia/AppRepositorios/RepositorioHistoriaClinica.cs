@@ -81,7 +81,7 @@ namespace Veterinaria.App.Persistencia
             }
         }
         public IEnumerable<HistoriaClinica> GetHistoriaClinica(){
-            return null;
+            return this.appContext.HistoriaClinicas;
         }
 
         /*  */

@@ -2,3 +2,54 @@
 @model Veterinaria.App.Presentacion.Page.HistoriaClinicaModel
 @{
 }
+
+<div class="text-center">
+    <h1 class="display-4">Gestión de Historias Clinicas</h1><br>
+</div>
+
+@foreach (var item in Model.listaHistoriaClinica)
+{
+    foreach (var m in Model.listaMascotas)
+    {
+        @if (m.Id == item.MascotaId)
+        {
+            <div class="card" id="print" style="margin: 20px;">
+            
+                <h5 class="card-header">Historia clinica de @m.Nombre </h5>
+                <div class="card-body">
+        
+                    <h5 class="card-title">@item.FechaRegistro</h5>
+                    <p class="card-text"> Historia: @item.Descripcion</p>     
+        
+                    
+                </div>
+                <a class="btn btn-primary" href="#" id="a-print" onclick="imprimirPagina();" style="margin-top: 20px; width: 20%;">
+                        imprimir
+                </a>
+            </div>
+            
+        }
+        
+        
+    }
+    
+
+
+
+
+
+    
+}
+
+<script>
+    function imprimirPagina() {
+
+        $("#a-print").hide();
+        $(".buscar_mascota").hide();
+
+
+        window.print();
+        location.reload();
+    }
+
+</script>
