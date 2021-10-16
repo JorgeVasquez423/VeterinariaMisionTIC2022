@@ -9,6 +9,12 @@ namespace  Veterinaria.App.Dominio
 
         public String Descripcion {get;set;}
         public Boolean Vacunacion {get;set;}
+
+        public int MascotaId {get;set;}
+        public Mascota Mascota {get;set;}
+
+
+
         
     }
     

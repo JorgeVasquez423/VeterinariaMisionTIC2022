@@ -16,8 +16,19 @@ namespace  Veterinaria.App.Dominio
 
         public Cuidador Cuidador {get;set;}
 
+        public HistoriaClinica HistoriaClinica {get;set;}
+
+
         /* la mascota tiene una lista de citas  */
         public List<Cita> Citas {get; set;}
+
+        public List<Vacuna> Vacunas {get; set;}
+
+        public List<SugerenciaCuidado> SugerenciaCuidados {get; set;}
+
+
+        
+
 
         
     }

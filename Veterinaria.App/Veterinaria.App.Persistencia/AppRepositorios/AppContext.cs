@@ -44,6 +44,20 @@ namespace Veterinaria.App.Persistencia
             modelBuilder.Entity<Mascota>().HasOne(c => c.Cuidador).WithMany(m => m.Mascotas).IsRequired();
 
             modelBuilder.Entity<Cita>().HasOne(m => m.Mascota).WithMany(c => c.Citas).IsRequired();
+
+            modelBuilder.Entity<Vacuna>().HasMany(m => m.Mascotas).WithMany(v => v.Vacunas);
+
+            //modelBuilder.Entity<HistoriaClinica>().HasOne(m => m.Mascota).HasOne(h => h.HistoriaClinica).IsRequired();
+
+            //modelBuilder.Entity<HistoriaClinica>.HasRequired(m => m.Mascota).WithRequiredPrincipal(h => h.HistoriaClinica);
+
+            modelBuilder.Entity<HistoriaClinica>().HasOne(m => m.Mascota).WithOne(h => h.HistoriaClinica);
+
+            modelBuilder.Entity<SugerenciaCuidado>().HasOne(m => m.Mascota).WithMany(s => s.SugerenciaCuidados).IsRequired();
+
+
+
+
         }
     }
 }
