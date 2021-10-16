@@ -95,16 +95,26 @@
                                 </button>
                             </div>
                             
-                            <a class="btn btn-warning" asp-page="/Mascota/Mascota" asp-route-IdMascota="@m.Id">
-                                <i class="far fa-edit"></i>
-                            </a>
+                            <div style="width:50px;">
 
-                            <a class="btn btn-primary" asp-page="/Citas/Citas" asp-page-handler="MascotaConCitas" asp-route-IdMascota="@m.Id">
-                                <i class="fas fa-calendar-alt"></i>
-                            </a>
-                            <a class="btn btn-info" asp-page="/Vacuna/Vacuna" asp-page-handler="MascotaConVacunas" asp-route-IdMascota="@m.Id">
-                                <i class="fas fa-syringe"></i>
-                            </a>
+                                <a class="btn btn-warning" asp-page="/Mascota/Mascota" asp-route-IdMascota="@m.Id">
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            </div>
+
+                            <div style="width:50px;">
+
+                                <a class="btn btn-primary" asp-page="/Citas/Citas" asp-page-handler="MascotaConCitas" asp-route-IdMascota="@m.Id">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </a>
+                            </div>
+
+                            <div style="width:50px;">
+
+                                <a class="btn btn-info" asp-page="/Vacuna/Vacuna" asp-page-handler="MascotaConVacunas" asp-route-IdMascota="@m.Id">
+                                    <i class="fas fa-syringe"></i>
+                                </a>
+                            </div>
 
                          
 

@@ -97,10 +97,15 @@
               @* <button class="btn btn-success" data-toggle="modal" data-target="#ViewModal">
                 <i class="far fa-eye"></i>
                 </button> *@
-              <a class="btn btn-success" asp-page="/Cuidador/Cuidador" asp-page-handler="CuidadorConMascotas"
-              asp-route-IdCuidador="@c.Id">
-                <i class="far fa-eye"></i>
-              </a>
+              <div style="width:50px;">
+
+                <a class="btn btn-success" asp-page="/Cuidador/Cuidador" asp-page-handler="CuidadorConMascotas"
+                asp-route-IdCuidador="@c.Id">
+                  <i class="far fa-eye"></i>
+                </a>
+              </div>
+
+                            
               <a class="btn btn-warning" asp-page="/Cuidador/Cuidador" asp-route-IdCuidador="@c.Id">
                 <i class="far fa-edit"></i>
               </a>
