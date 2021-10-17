@@ -3,8 +3,49 @@
 @{
 }
 
+<style>
+  * {
+    margin: 0%;
+  }
+
+  .contenedor1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+  }
+
+  @* .btn-add_mascota {
+    float: left;
+    padding-left: 15px;
+
+  } *@
+
+  .buscar_mascota {
+    float: right;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+</style>
+
 <div class="text-center">
     <h1 class="display-4">Gestión de Historias Clinicas</h1><br>
+</div>
+
+<div class="container contenedor1">
+ @*  <!-- btn agregar -->
+  <div class="btn-add_mascota">
+    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Nuevo</a>
+  </div> *@
+
+  <!-- buscar -->
+  <div class=" buscar_mascota ">
+    <input type="text" class="form-control" placeholder="Buscar">
+    <i class="fas fa-search"></i>
+  </div>
 </div>
 
 @foreach (var item in Model.listaHistoriaClinica)
