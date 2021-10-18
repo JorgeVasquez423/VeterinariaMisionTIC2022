@@ -14,20 +14,109 @@
 </head>
 
 <style>
-    body{
+    body {
         background: url(https://www.vippng.com/png/detail/514-5140817_productos-y-servicios-para-mascotas-fondo-animales-domesticos.png);
 
         background-repeat: no-repeat;
         background-position-y: 10%;
         background-size: 400px;
-        background-position-x: 3.5% ;
+        background-position-x: 3.5%;
     }
-    
+
+
+
+    @*preloader*@.hidden {
+        overflow: hidden;
+    }
+
+    .centrado {
+        height: 100vh;
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lds-heart {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        transform: rotate(45deg);
+        transform-origin: 40px 40px;
+    }
+
+    .lds-heart div {
+        top: 32px;
+        left: 32px;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        background: #dfc;
+        animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    .lds-heart div:after,
+    .lds-heart div:before {
+        content: " ";
+        position: absolute;
+        display: block;
+        width: 32px;
+        height: 32px;
+        background: #dfc;
+    }
+
+    .lds-heart div:before {
+        left: -24px;
+        border-radius: 50% 0 0 50%;
+    }
+
+    .lds-heart div:after {
+        top: -24px;
+        border-radius: 50% 50% 0 0;
+    }
+
+    @@keyframes lds-heart {
+        0% {
+            transform: scale(0.95);
+        }
+
+        5% {
+            transform: scale(1.1);
+        }
+
+        39% {
+            transform: scale(0.85);
+        }
+
+        45% {
+            transform: scale(1);
+        }
+
+        60% {
+            transform: scale(0.95);
+        }
+
+        100% {
+            transform: scale(0.9);
+        }
+    }
+
+
+    @*finpreloader*@
 </style>
 
-<body>
+<body class="hidden">
+    <div class="centrado" id="onload">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" >
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Veterinaria.com</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
@@ -42,12 +131,12 @@
                                 Inicio
                             </a>
                         </li>
-                        
-                        
+
+
                         @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area=""
-                                asp-page="/Administrador/Administrador">Administrador</a>
-                        </li> *@
+                            asp-page="/Administrador/Administrador">Administrador</a>
+                            </li> *@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Veterinario/Veterinario">
                                 <i class="fas fa-user-nurse"></i>
@@ -111,6 +200,12 @@
 
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/5f9c3bf3c5.js" crossorigin="anonymous"></script>
+    <script>
+        window.onload = function () {
+            $('#onload').fadeOut();
+            $('body').removeClass('hidden');
+        }
+    </script>
 </body>
 
 </html>
